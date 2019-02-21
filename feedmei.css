@@ -1,0 +1,181 @@
+@import "../css/default.css";
+
+@font-face {
+	font-family: "PT Sans";
+	src: url("feedmei/pts55f-webfont.woff") format("woff");
+}
+@font-face {
+	font-family: "PT Sans";
+	font-style: italic;
+	src: url("feedmei/pts56f-webfont.woff") format("woff");
+}
+@font-face {
+	font-family: "PT Sans";
+	font-weight: bold;
+	src: url("feedmei/pts75f-webfont.woff") format("woff");
+}
+
+:not(.material-icons) {
+	font-family: "PT Sans" !important;
+	text-rendering: optimizelegibility !important;
+}
+	.material-icons {
+		vertical-align: bottom !important;
+		filter: grayscale(100%);
+	}
+	.flat :before {
+		font-family: "flat-icon" !important;
+		filter: grayscale(100%);
+	}
+
+body.ttrss_main #feeds-holder,
+body.ttrss_main #feeds-holder_splitter,
+body.ttrss_main #toolbar-frame,
+body.ttrss_main #toolbar-frame #toolbar {
+	background: #eee;
+}
+
+body.ttrss_main #feeds-holder {
+	padding-top: 1em;
+}
+
+body.ttrss_main div.whiteBox,
+body.ttrss_main #headlines-spacer {
+	font-size: 1em;
+}
+
+body.ttrss_main #toolbar-frame #toolbar {
+	padding: .5em 0;
+	font-size: 1.1em;
+}
+	body.ttrss_main #toolbar-frame #toolbar span.left { padding-left: 5px }
+	body.ttrss_main #toolbar-frame #toolbar #selected_prompt { color: #444 }
+
+body.ttrss_main #feeds-holder #feedTree .counterNode {
+	background: #ddd;
+	padding: .2em;
+	font-size: .75em;
+	font-weight: bold;
+	color: #777;
+	border: 0;
+}
+
+body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
+	font-weight: normal;
+	color: #999;
+}
+
+body.ttrss_main #overlay_inner {
+	width: 300px;
+	margin: 42vh auto;
+}
+
+.flat .dijitProgressBarFull {
+	background-color: #160;
+}
+
+.dijitTreeNode .dijitTreeRow,
+.dijitTreeNode .dijitTreeRowSelected,
+.flat .dijitMenuItem {
+	color: #909090 !important;
+}
+
+.dijitTreeNode .dijitTreeRowSelected {
+	border-left-color: #eee !important;
+	border-right-color: #eee !important;
+}
+
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
+	color: #a33;
+}
+
+.dijitTreeExpando, .dijitTreeRow .dijitCheckBox, .prefs-set .dijitCheckBox {
+	top: -4px !important;
+}
+
+#toolbar .dijitButtonNode, #toolbar .dijitDownArrowButton {
+	color: #909090;
+	background: transparent !important;
+}
+
+.dijitCheckBox,
+#floatingTitle .feed a, .header .feed a,
+.feed-icon img, .feed-title img, .header img {
+	opacity: .75;
+	filter: grayscale(100%) !important;
+}
+
+.dijitButton, .dijitComboButton,
+.prefs-set .dijitCheckBox {
+	filter: grayscale(60%) !important;
+}
+
+.marked .marked-pic {
+	filter: grayscale(100%) brightness(60%);
+}
+
+body.ttrss_main i.icon-syndicate {
+	color: #909090;
+	border-color: #909090;
+}
+
+.flat .dijitContentPane {
+	background: #fefefe;
+}
+
+#header a,
+.content :not(.feed) a {
+	color: #270 !important;
+}
+
+#header a:hover, a:hover,
+.content :not(.feed) a:hover,
+.dijitMenuItem.dijitDisabled .dijitMenuItemLabel {
+	color: #160 !important
+}
+
+.dijitMenuItemSelected td {
+	color: #909090 !important;
+	background-color: #eee !important;
+}
+
+body.ttrss_main #headlines-frame div.feed-title {
+	border-color: #ddd;
+}
+
+div.cdm.expanded {
+	margin: 1em 2em;
+	padding: 1em;
+	color: #555 !important;
+	border: 1px solid #eee;
+}
+
+div.cdm.expanded.active {
+	background: #f9f9f9;
+	color: #444;
+	border: 1px solid #ddd;
+}
+
+div.cdm.expanded.active div.header a.title, div.cdm.active div.content {
+	color: #444;
+}
+
+div.cdm.expanded.Unread div.header a.title, div.cdm.expanded.Unread div.content {
+	color: #777;
+}
+
+div.cdm.expanded .footer {
+	border: 0;
+}
+
+.dijitTabContainerTop-tabs .dijitTabChecked::before {
+	background: #160 !important;
+	filter: none;
+}
+
+.dijitAccordionInnerContainerSelected .dijitAccordionTitle {
+	background: #909090 !important;
+}
+
+::selection { background: #ddd !important }
+::-webkit-scrollbar-thumb { background: #ddd !important }
