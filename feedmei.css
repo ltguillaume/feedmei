@@ -40,7 +40,8 @@ body.ttrss_main #feeds-holder {
 }
 
 body.ttrss_main div.whiteBox,
-body.ttrss_main #headlines-spacer {
+body.ttrss_main #headlines-frame.auto_catchup #headlines-spacer {
+	height: unset;
 	font-size: 1em;
 }
 
@@ -106,7 +107,8 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 }
 
 .dijitButton, .dijitComboButton,
-.prefs-set .dijitCheckBox {
+.ttrss_prefs .dijitCheckBox {
+	opacity: 1;
 	filter: grayscale(60%) !important;
 }
 
