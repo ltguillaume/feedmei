@@ -163,7 +163,7 @@ div.cdm.expanded.active div.header a.title, div.cdm.active div.content {
 }
 
 div.cdm.expanded.Unread div.header a.title, div.cdm.expanded.Unread div.content {
-	color: #777;
+	color: #555;
 }
 
 div.cdm.expanded .footer {
