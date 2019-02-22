@@ -41,7 +41,6 @@ body.ttrss_main #feeds-holder {
 
 body.ttrss_main div.whiteBox,
 body.ttrss_main #headlines-frame.auto_catchup #headlines-spacer {
-	height: unset;
 	font-size: 1em;
 }
 
