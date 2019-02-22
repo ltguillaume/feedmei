@@ -28,6 +28,10 @@
 		filter: grayscale(100%);
 	}
 
+/* Article font (uncomment to use):
+.content-inner * { font-family: serif !important }
+*/
+
 body.ttrss_main #feeds-holder,
 body.ttrss_main #feeds-holder_splitter,
 body.ttrss_main #toolbar-frame,
@@ -89,7 +93,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 	color: #a33;
 }
 
-.dijitTreeExpando, .dijitTreeRow .dijitCheckBox, .prefs-set .dijitCheckBox {
+.dijitTreeExpando, .dijitTreeRow .dijitCheckBox, fieldset.prefs-set .dijitCheckBox, fieldset.narrow .dijitCheckBox {
 	top: -4px !important;
 }
 
@@ -145,7 +149,7 @@ body.ttrss_main #headlines-frame div.feed-title {
 }
 
 div.cdm.expanded {
-	margin: 1em 2em;
+	margin: 1.5em;
 	padding: 1em;
 	color: #555 !important;
 	border: 1px solid #eee;
