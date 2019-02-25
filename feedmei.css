@@ -19,7 +19,7 @@
 	font-family: "PT Sans" !important;
 	text-rendering: optimizelegibility !important;
 }
-	.material-icons {
+	.material-icons, .feed-icon img {
 		vertical-align: bottom !important;
 		filter: grayscale(100%);
 	}
@@ -96,7 +96,6 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 }
 
 body.ttrss_main #feeds-holder #feedTree i.icon,
-body.ttrss_main #feeds-holder #feedTree .icon,
 .dijitTreeExpando, .dijitTreeRow .dijitCheckBox,
 fieldset.prefs .dijitCheckBox, fieldset.prefs-set .dijitCheckBox,
 fieldset.narrow .dijitCheckBox {
