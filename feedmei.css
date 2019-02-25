@@ -28,10 +28,11 @@
 		filter: grayscale(100%);
 	}
 
+ /* Article font (uncomment to use):
 .content-inner *,
 .post .content * {
-	font-family: Amasis, "PT Sans" !important
-}
+	font-family: serif !important;
+}*/
 
 body.ttrss_main #feeds-holder,
 body.ttrss_main #feeds-holder_splitter,
