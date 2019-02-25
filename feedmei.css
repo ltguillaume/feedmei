@@ -98,7 +98,8 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 body.ttrss_main #feeds-holder #feedTree i.icon,
 body.ttrss_main #feeds-holder #feedTree .icon,
 .dijitTreeExpando, .dijitTreeRow .dijitCheckBox,
-fieldset.prefs-set .dijitCheckBox, fieldset.narrow .dijitCheckBox {
+fieldset.prefs .dijitCheckBox, fieldset.prefs-set .dijitCheckBox,
+fieldset.narrow .dijitCheckBox {
 	top: -4px !important;
 }
 
