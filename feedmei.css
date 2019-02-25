@@ -95,7 +95,10 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 	color: #a33;
 }
 
-.dijitTreeExpando, .dijitTreeRow .dijitCheckBox, fieldset.prefs-set .dijitCheckBox, fieldset.narrow .dijitCheckBox {
+body.ttrss_main #feeds-holder #feedTree i.icon,
+body.ttrss_main #feeds-holder #feedTree .icon,
+.dijitTreeExpando, .dijitTreeRow .dijitCheckBox,
+fieldset.prefs-set .dijitCheckBox, fieldset.narrow .dijitCheckBox {
 	top: -4px !important;
 }
 
