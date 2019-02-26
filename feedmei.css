@@ -41,7 +41,7 @@ body.ttrss_main #toolbar-frame #toolbar {
 	background: #eee;
 }
 
-body.ttrss_main #feedTree {
+body.ttrss_main #feedTree .dijitTreeContainer {
 	padding-top: 1em;
 }
 
