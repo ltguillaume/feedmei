@@ -95,7 +95,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 	color: #a33;
 }
 
-.dijitTreeExpando { margin-top: -4px }
+.dijitTreeExpando, .loadingNode { margin-top: -4px }
 .dijitTreeIcon i { margin-top: -2px }
 .dijitTreeIcon img { margin-top: -1px }
 .feed-title img { margin-top: 3px }
