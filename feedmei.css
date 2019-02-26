@@ -19,8 +19,7 @@
 	font-family: "PT Sans" !important;
 	text-rendering: optimizelegibility !important;
 }
-	.material-icons, .feed-icon img {
-		vertical-align: bottom !important;
+	.material-icons {
 		filter: grayscale(100%);
 	}
 	.flat :before {
@@ -28,7 +27,7 @@
 		filter: grayscale(100%);
 	}
 
- /* Article font (uncomment to use):
+/* Article font (uncomment to use):
 .content-inner *,
 .post .content * {
 	font-family: serif !important;
@@ -42,7 +41,7 @@ body.ttrss_main #toolbar-frame #toolbar {
 	background: #eee;
 }
 
-body.ttrss_main #feeds-holder {
+body.ttrss_main #feedTree {
 	padding-top: 1em;
 }
 
@@ -96,12 +95,12 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 	color: #a33;
 }
 
-body.ttrss_main #feeds-holder #feedTree i.icon,
-.dijitTreeExpando, .dijitTreeRow .dijitCheckBox,
-fieldset.prefs .dijitCheckBox, fieldset.prefs-set .dijitCheckBox,
-fieldset.narrow .dijitCheckBox {
-	top: -4px !important;
-}
+.dijitTreeExpando { margin-top: -4px }
+.dijitTreeIcon i { margin-top: -2px }
+.dijitTreeIcon img { margin-top: -1px }
+.feed-title img { margin-top: 3px }
+.ttrss_prefs .dijitCheckBox { margin-top: -4px }
+.ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -3px }
 
 #toolbar .dijitButtonNode, #toolbar .dijitDownArrowButton {
 	color: #909090;
@@ -109,7 +108,7 @@ fieldset.narrow .dijitCheckBox {
 }
 
 .dijitCheckBox,
-#floatingTitle .feed a, .header .feed a,
+#floatingTitle .feed a, #floatingTitle img.icon, .header .feed a,
 .feed-icon img, .feed-title img, .header img {
 	opacity: .75;
 	filter: grayscale(100%) !important;
