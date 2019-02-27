@@ -27,6 +27,14 @@
 		filter: grayscale(100%);
 	}
 
+.dijitTreeExpando, .loadingNode { margin-top: -4px }
+.dijitTreeIcon i { margin-top: -2px }
+.dijitTreeIcon img { margin-top: -1px }
+.feed-title img { margin-top: 3px }
+.footer .left i.material-icons,
+.ttrss_prefs .dijitCheckBox { margin-top: -4px }
+.ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -3px }
+
 /* Article font (uncomment to use):
 .content-inner *,
 .post .content * {
@@ -94,13 +102,6 @@ body.ttrss_main #overlay_inner {
 body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 	color: #a33;
 }
-
-.dijitTreeExpando, .loadingNode { margin-top: -4px }
-.dijitTreeIcon i { margin-top: -2px }
-.dijitTreeIcon img { margin-top: -1px }
-.feed-title img { margin-top: 3px }
-.ttrss_prefs .dijitCheckBox { margin-top: -4px }
-.ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -3px }
 
 #toolbar .dijitButtonNode, #toolbar .dijitDownArrowButton {
 	color: #909090;
