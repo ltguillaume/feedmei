@@ -34,6 +34,7 @@
 .footer .left i.material-icons,
 .ttrss_prefs .dijitCheckBox { margin-top: -4px }
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -3px }
+.ttrss_prefs i.material-icons { margin-top: -6px }
 
 /* Article font (uncomment to use):
 .content-inner *,
