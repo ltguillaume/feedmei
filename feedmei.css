@@ -95,6 +95,11 @@ body.ttrss_main #overlay_inner {
 	color: #909090 !important;
 }
 
+.dijitTreeNode .dijitTreeRowHover {
+	border-left-color: #e7e7e7 !important;
+	border-right-color: #e7e7e7 !important;
+}
+
 .dijitTreeNode .dijitTreeRowSelected {
 	border-left-color: #eee !important;
 	border-right-color: #eee !important;
@@ -201,4 +206,4 @@ div.cdm.expanded .footer {
 }
 
 ::selection { background: #ddd !important }
-::-webkit-scrollbar-thumb { background: #ddd !important }
+::-webkit-scrollbar-thumb { background: #ddd !important } 
