@@ -17,4 +17,4 @@ into
 ```
 
 ## NOTE
-The last Tiny Tiny RSS commit this has been fully tested on is [4e253add8c78bb185911ffdffbb50ef318386a3c](https://git.tt-rss.org/fox/tt-rss/src/4e253add8c78bb185911ffdffbb50ef318386a3c).
+The last Tiny Tiny RSS commit this has been fully tested on is [63d7705b7f](https://git.tt-rss.org/fox/tt-rss/src/63d7705b7fbe980bfc4e8c7f01b38e80b3c68928).
