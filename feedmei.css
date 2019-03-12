@@ -27,18 +27,17 @@
 		filter: grayscale(100%);
 	}
 
-.dijitTreeIcon i { margin-top: -6px }
+.dijitTreeIcon i.material-icons, .dijitTreeIcon img { margin-top: -6px }
 .dijitTreeExpando, .loadingNode,
 .dijitButton .dijitButtonText { margin-top: -4px }
-.dijitTreeIcon img { margin-top: -1px }
 i.material-icons.icon.icon-star { margin-left: -2px }
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
 #dijit_form_DropDownButton_0 { margin-top: -6px }
-.feed-title img { margin-top: 3px }
 .dijitButtonContents i.material-icons,
+.feed-title i.material-icons,
 .footer .left i.material-icons,
-.dijitTabPaneWrapper .dijitCheckBox { margin-top: -4px }
-.ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -3px }
+.dijitTabPaneWrapper .dijitCheckBox,
+.ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 .ttrss_prefs i.material-icons { margin-top: -6px }
 
 /* Article font (uncomment to use):
