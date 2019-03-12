@@ -69,7 +69,6 @@ body.ttrss_main #toolbar-frame #toolbar {
 	font-size: 1.1em;
 }
 	body.ttrss_main #toolbar-frame #toolbar span.left { padding-left: 5px }
-	body.ttrss_main #toolbar-frame #toolbar #selected_prompt { color: #444 }
 
 body.ttrss_main #feeds-holder #feedTree .counterNode {
 	margin-top: 1px;
@@ -97,8 +96,10 @@ body.ttrss_main #overlay_inner {
 
 .dijitTreeNode .dijitTreeRow,
 .dijitTreeNode .dijitTreeRowSelected,
+#floatingTitle .title, #floatingTitle .author,
+#floatingTitle .updated, #floatingTitle .icon-score,
 .flat .dijitMenuItem {
-	color: #909090 !important;
+	color: #888 !important;
 }
 
 .dijitTreeNode .dijitTreeRowHover {
@@ -115,9 +116,11 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 }
 
 #toolbar .dijitButtonNode, #toolbar .dijitDownArrowButton {
-	color: #909090;
+	color: #888;
 	background: transparent !important;
 }
+
+#toolbar #dijit_form_ComboButton_0_label { margin: 0 -10px 0 2px }
 
 .dijitCheckBox,
 #floatingTitle .feed a, #floatingTitle img.icon, .header .feed a,
@@ -187,15 +190,17 @@ div.cdm.expanded.active {
 	border: 1px solid #ddd;
 }
 
-.header .title a, .header .row a, #feed_title a,
+.header .title a, .header .row a,
 div.cdm.expanded.active div.header a.title,
 div.cdm.active div.content {
 	color: #444;
 }
 
+#toolbar-frame #toolbar,
+#toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
 div.cdm.expanded.Unread div.content {
-	color: #555;
+	color: #555 !important;
 }
 
 div.cdm.expanded .footer {
