@@ -32,7 +32,7 @@
 .dijitTreeExpando, .dijitButton .dijitButtonText { margin-top: -4px }
 i.material-icons.icon.icon-star { margin-left: -2px }
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
-#dijit_form_DropDownButton_0 { margin-top: -6px }
+.dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton { margin-top: -6px }
 .dijitButtonContents i.material-icons, .loadingNode,
 .feed-title img, .feed-title i.material-icons, #feed_title i.material-icons,
 .footer .left i.material-icons,
@@ -101,6 +101,11 @@ body.ttrss_main #overlay_inner {
 	color: #888 !important;
 }
 
+.flat .dijitTextBoxHover,
+.flat .dijitTextBoxFocused {
+	border-color: #ccc;
+}
+
 #toolbar .dijitButtonNode, #toolbar table.dijitSelect {
 	box-shadow: none !important;
 }
@@ -140,6 +145,10 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 	filter: grayscale(60%) !important;
 }
 
+.ttrss_prefs .dijitTreeRow .feedParam {
+	margin-right: 1em;
+}
+
 .marked .marked-pic {
 	filter: grayscale(100%) brightness(60%);
 }
@@ -166,6 +175,7 @@ body.ttrss_main i.icon-syndicate {
 	color: #160 !important;
 }
 
+.ttrss_prefs .dijitTreeRowSelected,
 .dijitMenuItemSelected td {
 	color: #909090 !important;
 	background-color: #eee !important;
