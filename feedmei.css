@@ -28,17 +28,18 @@
 	}
 
 #floatingTitle .right img, .header .right img,
-.dijitTreeIcon i.material-icons, .dijitTreeIcon img { margin-top: -6px }
-.dijitTreeExpando, .dijitButton .dijitButtonText { margin-top: -4px }
-i.material-icons.icon.icon-star { margin-left: -2px }
+.dijitTreeIcon i.material-icons, .dijitTreeIcon img,
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
-.dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton { margin-top: -6px }
+.dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton,
+.ttrss_prefs i.material-icons { margin-top: -6px }
+
 .dijitButtonContents i.material-icons, .loadingNode,
 .feed-title img, .feed-title i.material-icons, #feed_title i.material-icons,
-.footer .left i.material-icons,
+.footer .left i.material-icons, i.material-icons.icon-restore,
 .dijitTabPaneWrapper .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
-.ttrss_prefs i.material-icons { margin-top: -6px }
+
+.dijitTreeExpando, .dijitButton .dijitButtonText { margin-top: -4px }
 
 /* Article font (uncomment to use):
 .content-inner *,
@@ -59,7 +60,7 @@ body.ttrss_main #feedTree .dijitTreeContainer {
 }
 
 body.ttrss_main div.whiteBox,
-body.ttrss_main #headlines-frame.auto_catchup #headlines-spacer {
+body.ttrss_main #headlines-spacer {
 	font-size: 1em;
 }
 
