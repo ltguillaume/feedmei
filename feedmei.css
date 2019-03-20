@@ -35,11 +35,13 @@
 
 .dijitButtonContents i.material-icons, .loadingNode,
 .feed-title img, .feed-title i.material-icons, #feed_title i.material-icons,
-.footer .left i.material-icons, i.material-icons.icon-restore,
+.footer .left i.material-icons,
 .dijitTabPaneWrapper .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 
 .dijitTreeExpando, .dijitButton .dijitButtonText { margin-top: -4px }
+
+i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
 /* Article font (uncomment to use):
 .content-inner *,
@@ -135,15 +137,21 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
 
 .dijitCheckBox,
 #floatingTitle .feed a, #floatingTitle img.icon, .header .feed a,
+#headlines-frame .icon,
 .feed-icon img, .feed-title img, .header img {
 	opacity: .75;
 	filter: grayscale(100%) !important;
 }
 
+#headlines-frame .hl .feed,
 .dijitButton, .dijitComboButton,
 .ttrss_prefs .dijitCheckBox {
 	opacity: 1;
 	filter: grayscale(60%) !important;
+}
+
+#headlines-frame .title:hover {
+	text-decoration: none !important;
 }
 
 .ttrss_prefs .dijitTreeRow .feedParam {
