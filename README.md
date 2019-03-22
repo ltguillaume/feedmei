@@ -6,7 +6,19 @@ A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspi
 ## Installation
 Just copy all files into the `themes.local` folder of your Tiny Tiny RSS installation.
 
-## Customization Tip
+## Customization Tips
+
+### Maximum width for articles
+For optimal reading, the article shouldn't stretch out too far. Add this to `feedmei.css`:
+```
+div.cdm.expanded {
+	width: calc(100% - 5em);
+	max-width: 900px;
+	margin: 1.5em auto;
+}
+```
+
+### Align article top
 Put some space between the article and the header when scrolling. In `rss/js/Article.js` change:
 ```
 				ctr.scrollTop = e.offsetTop;
@@ -17,4 +29,4 @@ into
 ```
 
 ## NOTE
-The last Tiny Tiny RSS commit this has been fully tested on is [6ae0a3dd3e](https://git.tt-rss.org/fox/tt-rss/src/6ae0a3dd3e1d7ec19d8488ef376d9f192bcc5b08).
+The last Tiny Tiny RSS commit this has been fully tested on is __671f4cee65__.

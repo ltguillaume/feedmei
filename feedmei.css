@@ -43,11 +43,17 @@
 
 i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
+#feedTree .dijitTreeExpando { margin: -4px -1px 0 6px }
+
 /* Article font (uncomment to use):
 .content-inner *,
 .post .content * {
 	font-family: serif !important;
 }*/
+
+.content-inner img {
+	border: 1px solid #eee !important;
+}
 
 body.ttrss_main #feeds-holder,
 body.ttrss_main #feeds-holder_splitter,
@@ -102,6 +108,11 @@ body.ttrss_main #overlay_inner {
 #floatingTitle .updated, #floatingTitle .icon-score,
 .flat .dijitMenuItem {
 	color: #888 !important;
+}
+
+#floatingTitle {
+	margin-top: -1px;
+	padding-right: 4px;
 }
 
 .flat .dijitTextBoxHover,
