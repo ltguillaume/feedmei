@@ -31,6 +31,7 @@
 .dijitTreeIcon i.material-icons, .dijitTreeIcon img,
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
 .dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton,
+.header .collapse i.material-icons,
 .ttrss_prefs i.material-icons { margin-top: -6px }
 
 .dijitButtonContents i.material-icons, .loadingNode,
@@ -229,6 +230,7 @@ div.cdm.expanded.active {
 }
 
 .header .title a, .header .row a,
+div.cdm.expandable.active div.header a.title,
 div.cdm.expanded.active div.header a.title,
 div.cdm.active div.content {
 	color: #444;
