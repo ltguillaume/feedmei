@@ -58,9 +58,10 @@ i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 	text-align: center;
 }
 
-.content-inner img {
-	border: 1px solid #eee !important;
-}
+.content-inner iframe,
+.content-inner img { border: 1px solid transparent !important }
+	.active .content-inner iframe,
+	.active .content-inner img { border: 1px solid #eee !important }
 
 body.ttrss_main #feeds-holder,
 body.ttrss_main #feeds-holder_splitter,
