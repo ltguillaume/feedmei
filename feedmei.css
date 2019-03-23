@@ -44,13 +44,19 @@
 
 i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
-#feedTree .dijitTreeExpando { margin: -4px -1px 0 6px }
+#feedTree .dijitTreeExpandoClosed, #feedTree .dijitTreeExpandoOpened { margin: -4px -1px 0 24px }
+#feedTree .dijitTreeRow { margin-left: -18px }
 
 /* Article font (uncomment to use):
 .content-inner *,
 .post .content * {
 	font-family: serif !important;
 }*/
+
+.content-inner figure {
+	margin: 1em 0;
+	text-align: center;
+}
 
 .content-inner img {
 	border: 1px solid #eee !important;
@@ -71,7 +77,10 @@ body.ttrss_main #feedTree .dijitTreeContainer {
 body.ttrss_main div.whiteBox,
 body.ttrss_main #headlines-spacer {
 	font-size: 1em;
+	margin: 0;
+	padding-bottom: 1em;
 }
+	body.ttrss_main div.whiteBox p { margin-bottom: 0 }
 
 body.ttrss_main #toolbar-frame #toolbar {
 	padding: 5px 0;
