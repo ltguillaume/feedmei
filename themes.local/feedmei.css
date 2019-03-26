@@ -19,39 +19,39 @@
 	font-family: "PT Sans" !important;
 	text-rendering: optimizelegibility !important;
 }
-	.material-icons {
-		filter: grayscale(100%);
-	}
+	.material-icons { filter: grayscale(100%) }
 	.flat :before {
 		font-family: "flat-icon" !important;
 		filter: grayscale(100%);
 	}
 
-#floatingTitle .right img, .header .right img,
-.dijitTreeIcon i.material-icons, .dijitTreeIcon img,
+#floatingTitle .right img,
+.header .right img,
+.dijitTreeIcon i.material-icons,
+.dijitTreeIcon img,
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
 .dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton,
 .header .collapse i.material-icons,
 .ttrss_prefs i.material-icons { margin-top: -6px }
 
-.dijitButtonContents i.material-icons, .loadingNode,
-.feed-title img, .feed-title i.material-icons, #feed_title i.material-icons,
+.dijitButtonContents i.material-icons,
+.loadingNode,
+.feed-title img,
+.feed-title i.material-icons,
+#feed_title i.material-icons,
 .footer .left i.material-icons,
 .dijitTabPaneWrapper .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 
-.dijitTreeExpando, .dijitButton .dijitButtonText { margin-top: -4px }
+.dijitTreeExpando,
+.dijitButton .dijitButtonText { margin-top: -4px }
 
 i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
-#feedTree .dijitTreeExpandoClosed, #feedTree .dijitTreeExpandoOpened { margin: -4px -1px 0 24px }
-#feedTree .dijitTreeRow { margin-left: -18px }
+#feedTree .dijitTreeExpandoClosed,
+#feedTree .dijitTreeExpandoOpened { margin: -4px -1px 0 24px }
 
-/* Article font (uncomment to use):
-.content-inner *,
-.post .content * {
-	font-family: serif !important;
-}*/
+#feedTree .dijitTreeRow { margin-left: -18px }
 
 .content-inner figure {
 	margin: 1em 0;
@@ -67,18 +67,15 @@ body.ttrss_main #feeds-holder,
 body.ttrss_main #feeds-holder_splitter,
 body.ttrss_main #content-insert_splitter,
 body.ttrss_main #toolbar-frame,
-body.ttrss_main #toolbar-frame #toolbar {
-	background: #eee;
-}
+body.ttrss_main #toolbar-frame #toolbar { background: #eee }
 
-body.ttrss_main #feedTree .dijitTreeContainer {
-	padding-top: 1em;
-}
+#feedlistLoading,
+body.ttrss_main #feedTree .dijitTreeContainer { padding-top: 1em }
+	#feedlistLoading { text-align: center }
 
 body.ttrss_main div.whiteBox,
 body.ttrss_main #headlines-spacer {
 	font-size: 1em;
-	margin: 0;
 	padding-bottom: 1em;
 }
 	body.ttrss_main div.whiteBox p { margin-bottom: 0 }
@@ -109,17 +106,15 @@ body.ttrss_main #overlay_inner {
 	margin: 42vh auto;
 }
 
-.flat .dijitProgressBarFull {
-	background-color: #1f6f0f;
-}
+.flat .dijitProgressBarFull { background-color: #1f6f0f }
 
 .dijitTreeNode .dijitTreeRow,
 .dijitTreeNode .dijitTreeRowSelected,
-#floatingTitle .title, #floatingTitle .author,
-#floatingTitle .updated, #floatingTitle .icon-score,
-.flat .dijitMenuItem {
-	color: #888 !important;
-}
+#floatingTitle .title,
+#floatingTitle .author,
+#floatingTitle .updated,
+#floatingTitle .icon-score,
+.flat .dijitMenuItem { color: #888 !important }
 
 #floatingTitle {
 	margin-top: -1px;
@@ -127,62 +122,53 @@ body.ttrss_main #overlay_inner {
 }
 
 .flat .dijitTextBoxHover,
-.flat .dijitTextBoxFocused {
-	border-color: #ccc;
-}
+.flat .dijitTextBoxFocused { border-color: #ccc }
 
-#toolbar .dijitButtonNode, #toolbar table.dijitSelect {
-	box-shadow: none !important;
-}
+#toolbar .dijitButtonNode,
+#toolbar table.dijitSelect { box-shadow: none !important }
 
-.dijitTreeNode .dijitTreeRowHover {
-	background: rgba(222, 222, 222, .2);
-}
+.dijitTreeNode .dijitTreeRowHover { background: rgba(222, 222, 222, .2) }
 
 .dijitTreeNode .dijitTreeRowSelected {
 	border-left-color: #eee !important;
 	border-right-color: #eee !important;
 }
 
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel {
-	color: #a33;
-}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { color: #a33 }
 
-#toolbar .dijitButtonNode, #toolbar .dijitDownArrowButton {
+#toolbar .dijitButtonNode,
+#toolbar .dijitDownArrowButton {
 	color: #888;
 	background: transparent !important;
 }
 
-#toolbar #dijit_form_ComboButton_0_button {
-	margin: -6px -10px 0 2px
-}
+#toolbar #dijit_form_ComboButton_0_button { margin: -6px -10px 0 2px }
 
 .dijitCheckBox,
-#floatingTitle .feed a, #floatingTitle img.icon, .header .feed a,
+#floatingTitle .feed a,
+#floatingTitle img.icon,
+.header .feed a,
 #headlines-frame .icon,
-.feed-icon img, .feed-title img, .header img {
+.feed-icon img,
+.feed-title img,
+.header img {
 	opacity: .75;
 	filter: grayscale(100%) !important;
 }
 
 #headlines-frame .hl .feed,
-.dijitButton, .dijitComboButton,
+.dijitButton,
+.dijitComboButton,
 .ttrss_prefs .dijitCheckBox {
 	opacity: 1;
 	filter: grayscale(60%) !important;
 }
 
-#headlines-frame .title:hover {
-	text-decoration: none !important;
-}
+#headlines-frame .title:hover { text-decoration: none !important }
 
-.ttrss_prefs .dijitTreeRow .feedParam {
-	margin-right: 1em;
-}
+.ttrss_prefs .dijitTreeRow .feedParam { margin-right: 1em }
 
-.marked .marked-pic {
-	filter: grayscale(100%) brightness(60%);
-}
+.marked .marked-pic { filter: grayscale(100%) brightness(60%) }
 
 body.ttrss_main i.icon-syndicate {
 	margin-top: -4px;
@@ -190,21 +176,16 @@ body.ttrss_main i.icon-syndicate {
 	border-color: #909090;
 }
 
-.flat .dijitContentPane {
-	background: #fefefe;
-}
+.flat .dijitContentPane { background: #fefefe }
 
 #header a,
 .hotkeys-help .hk,
-.content :not(.feed) a {
-	color: #270 !important;
-}
+.content :not(.feed) a { color: #270 !important }
 
-#header a:hover, a:hover,
+a:hover,
+#header a:hover,
 .content :not(.feed) a:hover,
-.dijitMenuItem.dijitDisabled .dijitMenuItemLabel {
-	color: #160 !important;
-}
+.dijitMenuItem.dijitDisabled .dijitMenuItemLabel { color: #160 !important }
 
 .ttrss_prefs .dijitTreeRowSelected,
 .dijitMenuItemSelected td {
@@ -212,14 +193,10 @@ body.ttrss_main i.icon-syndicate {
 	background-color: #eee !important;
 }
 
-body.ttrss_main .hl.active {
-	background: #ddd !important
-}
+body.ttrss_main .hl.active { background: #ddd !important }
 
 body.ttrss_main .hl.active *,
-#toolbar .dijitOpened * {
-	color: #444 !important;
-}
+#toolbar .dijitOpened * { color: #444 !important }
 
 body.ttrss_main #headlines-frame div.feed-title {
 	padding: 5px 10px;
@@ -239,20 +216,17 @@ div.cdm.expanded.active {
 	border: 1px solid #ddd;
 }
 
-.header .title a, .header .row a,
+.header .title a,
+.header .row a,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expanded.active div.header a.title,
-div.cdm.active div.content {
-	color: #444;
-}
+div.cdm.active div.content { color: #444 }
 
 #toolbar-frame #toolbar,
 #toolbar-frame #toolbar #feed_title a,
 #toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
-div.cdm.expanded.Unread div.content {
-	color: #555 !important;
-}
+div.cdm.expanded.Unread div.content { color: #555 !important }
 
 div.cdm.expanded .footer {
 	padding-left: 0;
@@ -264,9 +238,7 @@ div.cdm.expanded .footer {
 	filter: none;
 }
 
-.dijitAccordionInnerContainerSelected .dijitAccordionTitle {
-	background: #909090 !important;
-}
+.dijitAccordionInnerContainerSelected .dijitAccordionTitle { background: #909090 !important }
 
 ::selection { background: #ddd !important }
 ::-webkit-scrollbar-thumb { background: #ddd !important }

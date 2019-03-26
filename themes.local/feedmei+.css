@@ -1,0 +1,34 @@
+@import "feedmei.css";
+
+/* Hide "Mark as read" button */
+#toolbar-main #dijit_form_ComboButton_0 { display: none }
+
+/* Optimize legibility by maximum text width */
+div.cdm.expanded {
+	width: calc(100% - 5em);
+	max-width: 960px;
+	margin: 1.5em auto;
+}
+
+.content {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* Align first article image to right */
+.content-inner div:first-child img,
+.content-inner p:first-child img {
+	max-width: 42%;
+	float: right;
+	margin: 0 0 .5em 1em;
+}
+
+/* Set custom article fonts */
+.header .title { font-size: 19px !important }
+
+.content-inner,
+.content-inner *,
+.post .content,
+.post .content * { font: 17px/1.5 Amasis, "PT Serif", "PT Sans", serif !important }
+
+.content-inner figure figcaption { font: 700 .8em sans-serif !important }
