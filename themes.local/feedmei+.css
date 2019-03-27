@@ -31,4 +31,4 @@ div.cdm.expanded {
 .post .content,
 .post .content * { font: 17px/1.5 Amasis, "PT Serif", "PT Sans", serif !important }
 
-.content-inner figure figcaption { font: 700 .8em sans-serif !important }
+.content-inner figure * { font: 700 14px sans-serif !important }
