@@ -16,19 +16,28 @@ div.cdm.expanded {
 }
 
 /* Align first article image to right */
-.content-inner div:first-child img,
-.content-inner p:first-child img {
-	max-width: 42%;
-	float: right;
-	margin: 0 0 .5em 1em;
+@media screen and (min-width: 800px) {
+	.content-inner p:first-child img,
+	.content-inner figure:first-child {
+		max-width: 42%;
+		float: right;
+		margin: 0 0 .5em 1em;
+	}
 }
+
 
 /* Set custom article fonts */
 .header .title { font-size: 19px !important }
 
 .content-inner,
-.content-inner *,
+.content-inner :not(h3),
 .post .content,
-.post .content * { font: 17px/1.5 Amasis, "PT Serif", "PT Sans", serif !important }
+.post .content :not(h3) { font-family: Amasis, "PT Serif", "PT Sans", serif !important }
 
-.content-inner figure * { font: 700 14px sans-serif !important }
+.content-inner p,
+.post .content p { font-size: 17px }
+
+.content-inner figure * {
+	margin: 0;
+	font: 600 italic 13px sans-serif !important;
+}

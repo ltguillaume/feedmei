@@ -216,17 +216,20 @@ div.cdm.expanded.active {
 	border: 1px solid #ddd;
 }
 
+#toolbar-frame #toolbar,
+#toolbar-frame #toolbar #feed_title a,
+#toolbar-frame #toolbar #selected_prompt,
+div.cdm.expanded.Unread div.header a.title,
+div.cdm.expanded.Unread div.content { color: #555 !important }
+
 .header .title a,
 .header .row a,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expanded.active div.header a.title,
 div.cdm.active div.content { color: #444 }
 
-#toolbar-frame #toolbar,
-#toolbar-frame #toolbar #feed_title a,
-#toolbar-frame #toolbar #selected_prompt,
-div.cdm.expanded.Unread div.header a.title,
-div.cdm.expanded.Unread div.content { color: #555 !important }
+div.cdm.expanded.active.Unread div.header a.title,
+div.cdm.expanded.active.Unread div.content { color: #777 !important }
 
 div.cdm.expanded .footer {
 	padding-left: 0;

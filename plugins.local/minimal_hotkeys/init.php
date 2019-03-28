@@ -13,7 +13,7 @@ class Minimal_Hotkeys extends Plugin {
 			R: refresh feed,
 			S: toggle star,
 			U: toggle unread,
-			G A|F|P|S|T: Go to all|fresh|published|starred|tags
+			G A|F|P|S|T: go to all|fresh|published|starred|tags
 			", "ltGuillaume");
 	}
 
