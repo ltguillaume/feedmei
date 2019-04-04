@@ -5,9 +5,9 @@
 
 /* Optimize legibility by maximum text width */
 div.cdm.expanded {
-	width: calc(100% - 5em);
+	width: calc(100% - 72px);
 	max-width: 960px;
-	margin: 1.5em auto;
+	margin: 21px auto;
 }
 
 .content {
@@ -17,8 +17,10 @@ div.cdm.expanded {
 
 /* Align first article image to right */
 @media screen and (min-width: 800px) {
-	.content-inner p:first-child img,
-	.content-inner figure:first-child {
+	.content-inner > figure:first-child,
+	.content-inner > p:first-child > img:first-child,
+	.content-inner > div:first-child > img:first-child,
+	.content-inner > div:first-child > figure:first-child {
 		max-width: 42%;
 		float: right;
 		margin: 0 0 .5em 1em;
