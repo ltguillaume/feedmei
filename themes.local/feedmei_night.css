@@ -1,0 +1,29 @@
+@import "feedmei.css";
+
+body,
+.content :not(a) > img,
+.flat .dijitProgressBarFull,
+.flat .dijitProgressBarLabel { filter: invert(94%) }
+
+body.ttrss_prefs,
+body.ttrss_prefs a,
+body.ttrss_prefs .dijitProgressBarFull,
+body.ttrss_prefs .dijitProgressBarLabel { filter: none !important }
+
+.active .content-inner img { border-color: #111 !important }
+
+#header a,
+.hotkeys-help .hk,
+.content :not(.feed) a,
+.dijitMenuItem.dijitDisabled .dijitMenuItemLabel {
+	color: #160 !important;
+	filter: invert(94%);
+}
+.dijitMenuItemSelected.dijitDisabled .dijitMenuItemLabel { background-color: #000 !important }
+
+a:hover,
+#header a:hover,
+.content :not(.feed) a:hover {
+	color: #270 !important;
+	filter: invert(94%);
+}

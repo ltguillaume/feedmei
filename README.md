@@ -1,7 +1,9 @@
 # FeedMei
 A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspired by Feedly. Built by making the minimal amount of changes to the default theme.
 
-![Combined mode](SCREENSHOT.png)
+![Combined Mode](SCREENSHOT.png)
+
+![Combined Night Mode](SCREENSHOT2.png)
 
 ## Installation
 Just copy the files from `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation.

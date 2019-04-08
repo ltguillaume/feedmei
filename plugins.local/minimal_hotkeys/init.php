@@ -13,7 +13,7 @@ class Minimal_Hotkeys extends Plugin {
 			R: refresh feed,
 			S: toggle star,
 			U: toggle unread,
-			G A|F|P|S|T: go to all|fresh|published|starred|tags
+			G A|F|N|P|S|T: go to all|fresh|night mode|published|starred|tags
 			", "ltGuillaume");
 	}
 
@@ -38,6 +38,7 @@ class Minimal_Hotkeys extends Plugin {
 		$hotkeys["u"] = "toggle_unread";
 		$hotkeys["g a"] = "goto_all";
 		$hotkeys["g f"] = "goto_fresh";
+		$hotkeys["g n"] = "toggle_night_mode";
 		$hotkeys["g p"] = "goto_published";
 		$hotkeys["g s"] = "goto_marked";
 		$hotkeys["g t"] = "goto_tagcloud";
