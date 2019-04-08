@@ -34,8 +34,12 @@ div.cdm.expanded {
 .content-inner,
 .content-inner :not(h3),
 .post .content,
-.post .content :not(h3) { font-family: Amasis, "PT Serif", "PT Sans", serif !important }
+.post .content :not(h3) {
+	font-family: Amasis, "PT Serif", "PT Sans", serif !important;
+	letter-spacing: -.005em;
+}
 
+body.ttrss_main h3,
 .content-inner p,
 .post .content p { font-size: 17px }
 

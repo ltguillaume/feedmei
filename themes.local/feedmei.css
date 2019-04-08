@@ -193,9 +193,9 @@ a:hover,
 	background-color: #eee !important;
 }
 
-body.ttrss_main .hl.active { background: #ddd !important }
+body.ttrss_main .hl.active { background: #eee !important }
 
-body.ttrss_main .hl.active *,
+body.ttrss_main .hl.active :not(i),
 #toolbar .dijitOpened * { color: #444 !important }
 
 body.ttrss_main #headlines-frame div.feed-title {
@@ -212,7 +212,7 @@ div.cdm.expanded {
 
 div.cdm.expanded.active {
 	background: #f9f9f9;
-	color: #444;
+	color: #444 !important;
 	border: 1px solid #ddd;
 }
 
@@ -220,13 +220,16 @@ div.cdm.expanded.active {
 #toolbar-frame #toolbar #feed_title a,
 #toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
-div.cdm.expanded.Unread div.content { color: #555 !important }
+div.cdm.expanded.Unread div.content,
+.hl.Unread div.title a { color: #555 !important }
 
 .header .title a,
 .header .row a,
 div.cdm.expandable.active div.header a.title,
-div.cdm.expanded.active div.header a.title,
-div.cdm.active div.content { color: #444 }
+div.cdm.expanded.active div.header a.title { color: #444 }
+
+div.cdm.active div.content,
+#content-insert div.content { color: #3c3c3c }
 
 div.cdm.expanded.active.Unread div.header a.title,
 div.cdm.expanded.active.Unread div.content { color: #777 !important }
