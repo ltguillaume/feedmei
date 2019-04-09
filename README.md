@@ -6,17 +6,25 @@ A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspi
 ![Combined Night Mode](SCREENSHOT2.png)
 
 ## Installation
-Just copy the files from `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation.
+Just copy the contents of `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation. You can also copy `plugins.local` to your installation for additional functionality (see below).
 
 ## Customization Tips
+
+### Toggle night mode
+If you want to use the menu option "Toggle night mode" for this (or any other custom) theme, instead of just the default theme, be sure to copy over `plugins.local/toggle_night_mode` and enable it in the plugin preferences. This plugin checks if the active custom theme has a `themes.local/[theme]_night.css` variant and enables/disables it. If there's no such file, the plugin will revert to the default behavior (and use the default theme to toggle night mode).
 
 ### Maximum width for articles
 For optimal reading, the article shouldn't stretch out too far. Add this to `feedmei.css`, or use `feedmei+.css`, which includes more of my personal preferences:
 ```
 div.cdm.expanded {
-	width: calc(100% - 5em);
-	max-width: 900px;
-	margin: 1.5em auto;
+	width: calc(100% - 72px);
+	max-width: 960px;
+	margin: 21px auto;
+}
+
+.content {
+	max-width: 800px;
+	margin: 0 auto;
 }
 ```
 
