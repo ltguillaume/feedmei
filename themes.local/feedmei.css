@@ -41,6 +41,7 @@
 #feed_title i.material-icons,
 .footer .left i.material-icons,
 .dijitTabPaneWrapper .dijitCheckBox,
+.ttrss_prefs .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 
 .dijitTreeExpando,
@@ -188,7 +189,8 @@ a:hover,
 .dijitMenuItem.dijitDisabled .dijitMenuItemLabel { color: #160 !important }
 
 .ttrss_prefs .dijitTreeRowSelected,
-.dijitMenuItemSelected td {
+.dijitMenuItemSelected td,
+.dijitTreeRowSelected .filterRules li {
 	color: #909090 !important;
 	background-color: #eee !important;
 }
