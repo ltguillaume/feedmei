@@ -18,9 +18,9 @@ div.cdm.expanded {
 /* Align first article image to right */
 @media screen and (min-width: 800px) {
 	.content-inner > figure:first-child,
-	.content-inner > p:first-child > img:first-child,
-	.content-inner > div:first-child > img:first-child,
-	.content-inner > div:first-child > figure:first-child {
+	.content-inner > p:nth-child(-n+2) > img:first-child,
+	.content-inner > div:nth-child(-n+2) > img:first-child,
+	.content-inner > div:nth-child(-n+2) > figure:first-child {
 		max-width: 42%;
 		float: right;
 		margin: 0 0 .5em 1em;

@@ -145,11 +145,11 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 
 #toolbar #dijit_form_ComboButton_0_button { margin: -6px -10px 0 2px }
 
-.dijitCheckBox,
 #floatingTitle .feed a,
 #floatingTitle img.icon,
 .header .feed a,
 #headlines-frame .icon,
+#headlines-frame .dijitCheckBox,
 .feed-icon img,
 .feed-title img,
 .header img {
@@ -159,8 +159,8 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 
 #headlines-frame .hl .feed,
 .dijitButton,
-.dijitComboButton,
-.ttrss_prefs .dijitCheckBox {
+.dijitCheckBox,
+.dijitComboButton {
 	opacity: 1;
 	filter: grayscale(60%) !important;
 }
