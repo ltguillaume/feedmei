@@ -39,4 +39,4 @@ into
 ```
 
 ## NOTE
-[This is](https://git.tt-rss.org/fox/tt-rss/commit/656475ec78b2139ce43f547968e1d73143bd5c26) the last Tiny Tiny RSS commit the theme has been fully tested on.
+[This is](https://git.tt-rss.org/fox/tt-rss/src/525298569ec9041e672dee60e20565b2e0dc0923) the last Tiny Tiny RSS commit the theme has been fully tested on.

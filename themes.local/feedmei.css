@@ -30,6 +30,7 @@
 .dijitTreeIcon i.material-icons,
 .dijitTreeIcon img,
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
+#fox_form_ComboButton_0 .dijitReset.dijitButtonContents,
 .dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton,
 .header .collapse i.material-icons,
 .ttrss_prefs i.material-icons { margin-top: -6px }
@@ -143,7 +144,8 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 	background: transparent !important;
 }
 
-#toolbar #dijit_form_ComboButton_0_button { margin: -6px -10px 0 2px }
+#toolbar #dijit_form_ComboButton_0_button,
+#toolbar #fox_form_ComboButton_0_button { margin: -6px -10px 0 2px }
 
 #floatingTitle .feed a,
 #floatingTitle img.icon,
