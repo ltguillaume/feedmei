@@ -4,16 +4,17 @@ class Minimal_Hotkeys extends Plugin {
 
 	function about() {
 		return array(1.2, "
-			Left/right: prev/next,
-			Up/down: scroll,
-			Enter: open link,
-			B: toggle sidebar,
-			O: reverse order,
-			P: toggle published,
-			R: refresh feed,
-			S: toggle star,
-			U: toggle unread,
-			G A|F|N|P|S|T: go to all|fresh|night mode|published|starred|tags
+			[ / ]: Feed prev/next,
+			Left/right: Article prev/next,
+			Up/down: Scroll,
+			Enter: Open link,
+			B: Toggle sidebar,
+			O: Reverse order,
+			P: Toggle published,
+			R: Refresh feed,
+			S: Toggle star,
+			U: Toggle unread,
+			G A|F|N|P|R|S|T: Go to All|Fresh|Night mode|Published|Read|Starred|Tags
 			", "ltGuillaume");
 	}
 
@@ -25,6 +26,8 @@ class Minimal_Hotkeys extends Plugin {
 
 	function hook_hotkey_map() {
 
+		$hotkeys["["] = "prev_feed";
+		$hotkeys["]"] = "next_feed";
 		$hotkeys["(37)|Left"] = "prev_article_noscroll";
 		$hotkeys["(39)|Right"] = "next_article_noscroll";
 		$hotkeys["(38)|Up"] = "article_scroll_up";
@@ -40,6 +43,7 @@ class Minimal_Hotkeys extends Plugin {
 		$hotkeys["g f"] = "goto_fresh";
 		$hotkeys["g n"] = "toggle_night_mode";
 		$hotkeys["g p"] = "goto_published";
+		$hotkeys["g r"] = "goto_read";
 		$hotkeys["g s"] = "goto_marked";
 		$hotkeys["g t"] = "goto_tagcloud";
 
