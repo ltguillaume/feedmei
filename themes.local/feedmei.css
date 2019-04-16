@@ -62,8 +62,8 @@ i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
 .content-inner iframe,
 .content-inner img { border: 1px solid transparent !important }
-	.active .content-inner iframe,
-	.active .content-inner img { border: 1px solid #eee !important }
+	.active:not(.Unread) .content-inner iframe,
+	.active:not(.Unread) .content-inner img { border: 1px solid #eee !important }
 
 body.ttrss_main #feeds-holder,
 body.ttrss_main #feeds-holder_splitter,
@@ -214,7 +214,7 @@ div.cdm.expanded {
 	border: 1px solid #eee;
 }
 
-div.cdm.expanded.active {
+div.cdm.expanded.active:not(.Unread) {
 	background: #f9f9f9;
 	color: #444 !important;
 	border: 1px solid #ddd;
@@ -225,7 +225,10 @@ div.cdm.expanded.active {
 #toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
 div.cdm.expanded.Unread div.content,
-.hl.Unread div.title a { color: #555 !important }
+.hl.Unread div.title a,
+.hl.active.Unread div.title a { color: #555 !important }
+
+.hl.active div.title a { color: #777 !important }
 
 .header .title a,
 .header .row a,
@@ -234,9 +237,6 @@ div.cdm.expanded.active div.header a.title { color: #444 }
 
 div.cdm.active div.content,
 #content-insert div.content { color: #3c3c3c }
-
-div.cdm.expanded.active.Unread div.header a.title,
-div.cdm.expanded.active.Unread div.content { color: #777 !important }
 
 div.cdm.expanded .footer {
 	padding-left: 0;

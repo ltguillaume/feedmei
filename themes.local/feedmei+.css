@@ -18,6 +18,10 @@ div.cdm.expanded {
 
 /* Align first article image to right */
 @media screen and (min-width: 800px) {
+	.content > figure:first-child,
+	.content > p:nth-child(-n+2) > img:first-child,
+	.content > div:nth-child(-n+2) > img:first-child,
+	.content > div:nth-child(-n+2) > figure:first-child,
 	.content-inner > figure:first-child,
 	.content-inner > p:nth-child(-n+2) > img:first-child,
 	.content-inner > div:nth-child(-n+2) > img:first-child,
@@ -28,23 +32,29 @@ div.cdm.expanded {
 	}
 }
 
-
 /* Set custom article fonts */
 .header .title { font-size: 19px !important }
 
 .content-inner,
-.content-inner :not(h3),
+.content-inner *,
 .post .content,
-.post .content :not(h3) {
+.post .content * {
 	font-family: Amasis, "PT Serif", "PT Sans", serif !important;
 	letter-spacing: -.005em;
 }
 
-body.ttrss_main h3,
+.content h1,
+.content h2,
+.content h3 {
+	font-family: "PT Sans", sans-serif !important;
+	font-size: 19px !important;
+}
+
 .content-inner p,
 .post .content p { font-size: 17px }
 
-.content-inner figure * {
+.content-inner figure *,
+.post .content figure * {
 	margin: 0;
-	font: 600 italic 13px sans-serif !important;
+	font: 600 13px "PT Sans", sans-serif !important;
 }
