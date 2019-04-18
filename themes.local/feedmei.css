@@ -212,6 +212,7 @@ div.cdm.expanded {
 	padding: 1em;
 	color: #555 !important;
 	border: 1px solid #eee;
+	transition: all .1s linear;
 }
 
 div.cdm.expanded.active:not(.Unread) {
