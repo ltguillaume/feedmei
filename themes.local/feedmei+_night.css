@@ -11,6 +11,7 @@ body.ttrss_prefs a,
 body.ttrss_prefs .dijitProgressBarFull,
 body.ttrss_prefs .dijitProgressBarLabel { filter: none !important }
 
+.active:not(.Unread) .content-inner iframe, .active:not(.Unread) .content-inner img,
 .active .content-inner img { border-color: #111 !important }
 
 body a:hover,
