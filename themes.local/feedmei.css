@@ -147,6 +147,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 #toolbar #dijit_form_ComboButton_0_button,
 #toolbar #fox_form_ComboButton_0_button { margin: -6px -10px 0 2px }
 
+#notify,
 #floatingTitle .feed a,
 #floatingTitle img.icon,
 .header .feed a,
@@ -223,7 +224,7 @@ div.cdm.expanded.active:not(.Unread) {
 
 #toolbar-frame #toolbar,
 #toolbar-frame #toolbar #feed_title a,
-#toolbar-frame #toolbar #selected_prompt,
+body.ttrss_main #toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
 div.cdm.expanded.Unread div.content,
 .hl.Unread div.title a,

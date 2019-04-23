@@ -49,7 +49,7 @@ function fart($file, $find, $replace) {
 if(isset($_POST['submit'])) {
 	if (!isset($_POST['password']) || hash('sha256', $_POST['password']) != $password)
 		die('Password incorrect');
-	if (isset($_POST['download']) && ($_POST['download'])) {
+	if (isset($_POST['download'])) {
 		echo '<li>Downloading latest commit from master branch...</li>';
 		$target_file = '_tt-rss-master.zip';
 		$master = fopen('https://git.tt-rss.org/fox/tt-rss/archive/master.zip', 'r');
@@ -113,12 +113,12 @@ if(isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<body>
-<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
-<p><input type='checkbox' name='download' id='download' value='1'> Download latest commit from master branch</p>
-<p>Or upload zip: <input type='file' name='zip'></p>
-<p>Password: <input type='password' name='password'></p>
-<p><input type='submit' value='Upload' name='submit'></p>
-</form>
-</body>
+	<body>
+		<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
+			<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
+			<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
+			<p>Enter password: <input type='password' name='password'></p>
+			<p><input type='submit' value='Submit' name='submit'></p>
+		</form>
+	</body>
 </html>
