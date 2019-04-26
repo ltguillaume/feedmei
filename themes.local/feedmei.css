@@ -230,6 +230,7 @@ div.cdm.expanded.Unread div.content,
 .hl.Unread div.title a,
 .hl.active.Unread div.title a { color: #555 !important }
 
+div.cdm.expanded div.header a.title,
 .hl.active div.title a { color: #777 !important }
 
 .header .title a,

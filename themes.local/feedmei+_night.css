@@ -1,26 +1,28 @@
 @import "feedmei+.css";
 
-body,
-body a:hover,
-#header a,
+body:not(.ttrss_prefs),
+body:not(.ttrss_prefs) a:hover,
+body:not(.ttrss_prefs) #header a,
+body:not(.ttrss_prefs) .feed-editor-icon,
+body:not(.ttrss_prefs) .dijitMenuItem.dijitDisabled .dijitMenuItemLabel,
+body:not(.ttrss_prefs) .dijitProgressBarFull,
+body:not(.ttrss_prefs) .dijitProgressBarLabel,
 .hotkeys-help .hk,
 .content iframe,
 .content :not(a) > img,
-.content :not(.feed) a,
-.flat .dijitProgressBarFull,
-.flat .dijitProgressBarLabel,
-.dijitMenuItem.dijitDisabled .dijitMenuItemLabel { filter: invert(94%) }
+.content :not(.feed) a { filter: invert(94%) }
 
-body.ttrss_prefs,
-body.ttrss_prefs a,
-body.ttrss_prefs .dijitProgressBarFull,
-body.ttrss_prefs .dijitProgressBarLabel { filter: none !important }
+body:not(.ttrss_prefs) span.dijitButton,
+body:not(.ttrss_prefs) .dijitCheckBox,
+body:not(.ttrss_prefs) .dijitTabContainerTop-tabs .dijitTabChecked:before { filter: grayscale(40%) invert(94%) !important }
 
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { color: #3ff }
+body:not(.ttrss_prefs) .dijitDialogUnderlay { background: #fff }
 
-.dijitMenuItemSelected.dijitDisabled .dijitMenuItemLabel { background-color: #000 !important }
+body:not(.ttrss_prefs) .dijitMenuItemSelected.dijitDisabled .dijitMenuItemLabel { background-color: #000 !important }
 
-.active:not(.Unread) .content-inner iframe, .active:not(.Unread) .content-inner img,
-.active .content-inner img { border-color: #111 !important }
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { color: #4ff }
+
+.active:not(.Unread) .content-inner img,
+.active:not(.Unread) .content-inner iframe { border-color: #111 !important }
 
 div.cdm.expanded div.header a.title { transition: color .2s linear, filter .2s linear }
