@@ -1,7 +1,7 @@
 Plugin | Description
 --- | ---
 __toggle_night_mode__ | Allow night mode toggle for custom themes (use `yourtheme_night.css` as filename)
-__fresh_oldest_first__ | Changes the default sort order upon switching feeds: _Oldest first_ for Fresh articles, _Default_ for others. Uncomment 2 lines in `init.js` to keep manually changed order across feeds, except for when going to/coming from Fresh articles.
+__unread_oldest_first__ | Changes the sort order to _Oldest first_ when the view mode is _Adaptive_ and there are unread articles, otherwise sets sort order back to _Default_.
 __minimal_hotkeys__ | Replaces the default keyboard shortcuts with the following set:
 
 Hotkey | Command
