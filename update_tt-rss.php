@@ -118,7 +118,7 @@ if(isset($_POST['submit'])) {
 			<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
 			<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
 			<p>Enter password: <input type='password' name='password'></p>
-			<p><input type='submit' value='Submit' name='submit'></p>
+			<p><input type='submit' value='Submit' name='submit' autofocus></p>
 		</form>
 	</body>
 </html>
