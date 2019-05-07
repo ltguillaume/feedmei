@@ -3,8 +3,8 @@ class Unread_Oldest_First extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.2,
-			"Changes the sort order to 'Oldest first' when the view mode is 'Adaptive' and there are unread articles, otherwise sets sort order back to 'Default'.",
+		return array(2.0,
+			"Changes the sort order to 'Oldest first' when the view mode is 'Adaptive' and there are unread articles, otherwise sets sort order back to 'Default'. Needs commit e981d52bda or newer.",
 			"ltGuillaume");
 	}
 

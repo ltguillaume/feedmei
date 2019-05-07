@@ -1,7 +1,7 @@
 Plugin | Description
 --- | ---
 __toggle_night_mode__ | Allow night mode toggle for custom themes (use `yourtheme_night.css` as filename)
-__unread_oldest_first__ | Changes the sort order to _Oldest first_ when the view mode is _Adaptive_ and there are unread articles, otherwise sets sort order back to _Default_.
+__unread_oldest_first__ | Changes the sort order to _Oldest first_ when the view mode is _Adaptive_ and there are unread articles, otherwise sets sort order back to _Default_. Needs tt-rss commit [e981d52bda](https://git.tt-rss.org/fox/tt-rss/src/e981d52bdabbb0893ac69b29d7690d0bb63fbc14) or later.
 __minimal_hotkeys__ | Replaces the default keyboard shortcuts with the following set:
 
 Hotkey | Command
