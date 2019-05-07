@@ -29,14 +29,14 @@ div.cdm.expanded {
 ```
 
 ### Align article top
-Put some space between the article and the header when scrolling. In `rss/js/Article.js` change:
+In combined mode, put some space between the article and the header when jumping to previous/next article with hotkeys. In `rss/js/Article.js` replace:
 ```
 				ctr.scrollTop = e.offsetTop;
 ```
-into
+with
 ```
 				ctr.scrollTop = e.offsetTop - 21;
 ```
 
 ## NOTE
-[This is](https://git.tt-rss.org/fox/tt-rss/src/525298569ec9041e672dee60e20565b2e0dc0923) the last Tiny Tiny RSS commit the theme has been fully tested on.
+[This is](https://git.tt-rss.org/fox/tt-rss/src/9423d72f6c82f05a5c7512370ac413776747f540) the last Tiny Tiny RSS commit the theme has been fully tested on.

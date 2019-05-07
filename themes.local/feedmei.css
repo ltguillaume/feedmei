@@ -25,6 +25,9 @@
 		filter: grayscale(100%);
 	}
 
+.header .collapse i.material-icons { margin-top: -10px }
+
+#floatingTitle .collapse i.material-icons,
 #floatingTitle .right img,
 .header .right img,
 .dijitTreeIcon i.material-icons,
@@ -32,8 +35,7 @@
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
 #fox_form_ComboButton_0 .dijitReset.dijitButtonContents,
 .dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton,
-.header .collapse i.material-icons,
-.ttrss_prefs i.material-icons { margin-top: -6px }
+.ttrss_prefs :not(#notify) > i.material-icons { margin-top: -6px }
 
 .dijitButtonContents i.material-icons,
 .loadingNode,
@@ -171,6 +173,8 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 #headlines-frame .title:hover { text-decoration: none !important }
 
 .ttrss_prefs .dijitTreeRow .feedParam { margin-right: 1em }
+
+.ttrss_prefs .prefs.plugin > label { vertical-align: top }
 
 .marked .marked-pic { filter: grayscale(100%) brightness(60%) }
 
