@@ -205,7 +205,7 @@ a:hover,
 body.ttrss_main .hl.active { background: #eee !important }
 
 body.ttrss_main .hl.active :not(i),
-#toolbar .dijitOpened * { color: #444 !important }
+#toolbar .dijitOpened * { color: #444 }
 
 body.ttrss_main #headlines-frame div.feed-title {
 	padding: 5px 10px;
@@ -231,11 +231,12 @@ div.cdm.expanded.active:not(.Unread) {
 body.ttrss_main #toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
 div.cdm.expanded.Unread div.content,
-.hl.Unread div.title a,
-.hl.active.Unread div.title a { color: #555 !important }
+body.ttrss_main .hl.Unread div.title a,
+body.ttrss_main .hl.active.Unread div.title a { color: #555 }
 
 div.cdm.expanded div.header a.title,
-.hl.active div.title a { color: #777 !important }
+body.ttrss_main .hl div.title a,
+body.ttrss_main .hl.active .hl-content a.title { color: #777 }
 
 .header .title a,
 .header .row a,
