@@ -1,5 +1,20 @@
 @import "feedmei.css";
 
+@font-face {
+	font-family: "PT Serif";
+	src: url("feedmei/ptf55f-webfont.woff") format("woff");
+}
+@font-face {
+	font-family: "PT Serif";
+	font-style: italic;
+	src: url("feedmei/ptf56f-webfont.woff") format("woff");
+}
+@font-face {
+	font-family: "PT Serif";
+	font-weight: bold;
+	src: url("feedmei/ptf75f-webfont.woff") format("woff");
+}
+
 /* Optimize legibility by maximum text width */
 div.cdm.expanded {
 	width: calc(100% - 72px);
@@ -29,14 +44,15 @@ div.cdm.expanded {
 }
 
 /* Set custom article fonts */
-.header .title { font-size: 19px !important }
+.cdm.expanded .header .title,
+.cdm.expandable.active .header .title,
+#content-insert .header .title a { font-size: 19px !important }
 
 .content-inner,
 .content-inner *,
 .post .content,
 .post .content * {
 	font-family: Amasis, "PT Serif", "PT Sans", serif !important;
-	letter-spacing: -.005em;
 	line-height: 1.6;
 }
 
@@ -48,7 +64,7 @@ div.cdm.expanded {
 }
 
 .content-inner p,
-.post .content p { font-size: 17px }
+.post .content p { font-size: 16px }
 
 .content-inner figure *,
 .post .content figure * {

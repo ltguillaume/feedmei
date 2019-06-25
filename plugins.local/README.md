@@ -11,9 +11,10 @@ Left/right | Article prev/next
 Up/down | Scroll
 Enter | Open link
 B | Toggle sidebar
+C | Close/collapse article
 O | Reverse order
 P | Toggle published
 R | Refresh feed
 S | Toggle star
 U | Toggle unread
-G A/F/N/P/R/S/T | Go to All/Fresh/Night mode/Published/Read/Starred/Tags
+G A\|F\|N\|P\|R\|S\|T | Go to All\|Fresh\|Night mode\|Published\|Read\|Starred\|Tags

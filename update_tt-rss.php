@@ -78,7 +78,7 @@ if(isset($_POST['submit'])) {
 		echo '<li>Adding &lt;g&gt; to allowed elements for TorrentFreak articles</li>';
 		fart('include/functions.php', '$allowed_elements = array(', '$allowed_elements = array(\'g\', ');
 		echo '<li>Adding margin for scrolling to articles</li>';
-		fart('js/Article.js', 'ctr.scrollTop = e.offsetTop;', 'ctr.scrollTop = e.offsetTop - 21;');
+		fart('js/Article.js', 'ctr.scrollTop = e.offsetTop;', 'ctr.scrollTop = e.offsetTop - (App.getInitParam("cdm_expanded") ? 21 : 0);');
 
 		echo '<li>Removing useless files...</li><ul>';
 		foreach(glob('{,*,*/*,*/*/*,*/*/*/*,*/*/*/*/*}/{.empty,.gitignore,*.less,*.map}', GLOB_BRACE) as $file)	// No spaces after comma between {}!
@@ -117,8 +117,8 @@ if(isset($_POST['submit'])) {
 		<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
 			<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
 			<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
-			<p>Enter password: <input type='password' name='password'></p>
-			<p><input type='submit' value='Submit' name='submit' autofocus></p>
+			<p>Enter password: <input type='password' name='password' autofocus></p>
+			<p><input type='submit' value='Submit' name='submit'></p>
 		</form>
 	</body>
 </html>

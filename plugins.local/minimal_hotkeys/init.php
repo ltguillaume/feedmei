@@ -9,6 +9,7 @@ class Minimal_Hotkeys extends Plugin {
 			Up/down: Scroll,
 			Enter: Open link,
 			B: Toggle sidebar,
+			C: Close/collapse article,
 			O: Reverse order,
 			P: Toggle published,
 			R: Refresh feed,
@@ -34,6 +35,7 @@ class Minimal_Hotkeys extends Plugin {
 		$hotkeys["(40)|Down"] = "article_scroll_down";
 		$hotkeys["\r|Enter"] = "open_in_new_window";
 		$hotkeys["b"] = "collapse_sidebar";
+		$hotkeys["c"] = "close_article";
 		$hotkeys["o"] = "feed_reverse";
 		$hotkeys["p"] = "toggle_publ";
 		$hotkeys["r"] = "feed_refresh";

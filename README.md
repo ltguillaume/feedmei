@@ -35,7 +35,7 @@ In combined mode, put some space between the article and the header when jumping
 ```
 with
 ```
-				ctr.scrollTop = e.offsetTop - 21;
+				ctr.scrollTop = e.offsetTop - (App.getInitParam("cdm_expanded") ? 21 : 0);
 ```
 
 ## NOTE
