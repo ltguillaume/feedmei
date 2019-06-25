@@ -70,4 +70,5 @@ div.cdm.expanded {
 .post .content figure * {
 	margin: 0;
 	font: 600 13px "PT Sans", sans-serif !important;
+	letter-spacing: .005em;
 }

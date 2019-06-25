@@ -193,10 +193,12 @@ body.ttrss_main i.icon-syndicate {
 
 #header a,
 .hotkeys-help .hk,
+.content > a,
 .content :not(.feed) a { color: #270 !important }
 
 a:hover,
 #header a:hover,
+.content > a:hover,
 .content :not(.feed) a:hover,
 .dijitMenuItem.dijitDisabled .dijitMenuItemLabel { color: #160 !important }
 
@@ -273,12 +275,14 @@ body.ttrss_main .hl:not(.Unread) .hl-content a.title,
 body.ttrss_main #headlines-frame div.feed-title a.title { font-weight: normal }
 
 .header .title a,
+body.ttrss_main .hl div.title a,
 div.cdm.expanded.active div.header a.title,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expandable.Unread div.header a.title {
 	font-weight: bold;
 	letter-spacing: .005em;
 }
+	body.ttrss_main .hl div.title a span { letter-spacing: 0 }
 
 div.cdm.expanded .footer {
 	padding: 0 3px 0 0;
