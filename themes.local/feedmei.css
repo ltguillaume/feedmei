@@ -195,6 +195,7 @@ body.ttrss_main i.icon-syndicate {
 .hotkeys-help .hk,
 .content > a,
 .content :not(.feed) a { color: #270 !important }
+	.footer .left a { color: #444 !important }
 
 a:hover,
 #header a:hover,
@@ -216,10 +217,6 @@ body.ttrss_main .hl.Unread,
 .cdm.expandable.active { background: #fefefe !important }
 
 body.ttrss_main .hl.active { background: #f5f5f5 !important }
-
-body.ttrss_main .hl.active :not(i),
-body.ttrss_main .hl.active .feed a,
-#toolbar .dijitOpened * { color: #444 }
 
 body.ttrss_main #headlines-frame div.feed-title {
 	margin-top: -1px;
@@ -247,10 +244,14 @@ div.cdm.expandable.active:not(.Unread) {
 	div.cdm.expanded.active:not(.Unread) { border: 1px solid #ddd }
 
 .header .row a,
-div.cdm.active div.content,
+#toolbar .dijitOpened *,
 #content-insert div.content,
+div.cdm.active div.content,
 div.cdm.expanded.active div.header a.title,
-div.cdm.expandable.active div.header a.title { color: #444 }
+div.cdm.expandable.active div.header a.title,
+body.ttrss_main .hl.active :not(i),
+body.ttrss_main .hl.active .feed a,
+body.ttrss_main .hl.active .hl-content a.title { color: #444 }
 
 .header .title a,
 #toolbar-frame #toolbar,
@@ -260,12 +261,12 @@ div.cdm.expanded.Unread div.header a.title,
 div.cdm.expanded.Unread div.content,
 div.cdm.expandable.Unread div.header a.title,
 body.ttrss_main .hl.Unread div.title a,
+body.ttrss_main .hl.active div.title span,
 body.ttrss_main .hl.active.Unread div.title a { color: #555 }
 
 div#floatingTitle a.title,
 div#floatingTitle.Unread a.title,
 body.ttrss_main .hl div.title a,
-body.ttrss_main .hl.active .hl-content a.title,
 div.cdm.expanded div.header a.title,
 div.cdm.expanded.Unread.active div.header a.title,
 div.cdm.expandable.Unread.active div.header a.title { color: #777 }
@@ -275,7 +276,7 @@ body.ttrss_main .hl:not(.Unread) .hl-content a.title,
 body.ttrss_main #headlines-frame div.feed-title a.title { font-weight: normal }
 
 .header .title a,
-body.ttrss_main .hl div.title a,
+body.ttrss_main .hl.Unread div.title a,
 div.cdm.expanded.active div.header a.title,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expandable.Unread div.header a.title {

@@ -52,7 +52,7 @@ div.cdm.expanded {
 .content-inner *,
 .post .content,
 .post .content * {
-	font-family: Amasis, "PT Serif", "PT Sans", serif !important;
+	font-family: "PT Serif", "PT Sans", serif !important;
 	line-height: 1.6;
 }
 
