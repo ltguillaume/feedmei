@@ -1,6 +1,5 @@
 <?php
 class Unread_Oldest_First extends Plugin {
-	private $host;
 
 	function about() {
 		return array(2.0,
@@ -8,9 +7,7 @@ class Unread_Oldest_First extends Plugin {
 			"ltGuillaume");
 	}
 
-	function init($host) {
-		$this->host = $host;
-	}
+	function init($host) {}
 
 	function get_js() {
 		return file_get_contents(__DIR__ . "/init.js");

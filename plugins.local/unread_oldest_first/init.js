@@ -12,6 +12,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 		}
 
 		PluginHost.register(PluginHost.HOOK_FEED_SET_ACTIVE, (feed) => {
+
 			if (this.prev_feed == null && Feeds.getUnread(feed[0], feed[1]) == -1) {
 				var countersHook = function() {
 					if (this.prev_feed == 'hooked')
@@ -24,6 +25,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 
 			if (feed[0] != this.prev_feed)
 				setOrder(feed);
+
 		});
 	});
 });

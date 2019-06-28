@@ -193,12 +193,18 @@ body.ttrss_main i.icon-syndicate {
 
 #header a,
 .hotkeys-help .hk,
+.Selected .header span,
+.Selected .header a.title,
+.hl.Selected > div span,
+.hl.Selected > div a.title,
 .content > a,
 .content :not(.feed) a { color: #270 !important }
 	.footer .left a { color: #444 !important }
 
 a:hover,
 #header a:hover,
+.Selected a.title:hover,
+.Selected span:hover,
 .content > a:hover,
 .content :not(.feed) a:hover,
 .dijitMenuItem.dijitDisabled .dijitMenuItemLabel { color: #160 !important }

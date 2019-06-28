@@ -1,5 +1,6 @@
 <?php
 class Minimal_Hotkeys extends Plugin {
+
 	private $host;
 
 	function about() {
@@ -21,12 +22,10 @@ class Minimal_Hotkeys extends Plugin {
 
 	function init($host) {
 		$this->host = $host;
-
 		$host->add_hook($host::HOOK_HOTKEY_MAP, $this);
 	}
 
 	function hook_hotkey_map() {
-
 		$hotkeys["["] = "prev_feed";
 		$hotkeys["]"] = "next_feed";
 		$hotkeys["(37)|Left"] = "prev_article_noscroll";

@@ -6,7 +6,7 @@ A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspi
 ![Combined Night Mode](SCREENSHOT2.png)
 
 ## Installation
-Just copy the contents of `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation. You can also copy `plugins.local` to your installation for additional functionality (see below).
+Just copy the contents of `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation. You can also copy `plugins.local` to your installation for additional functionality (see [README.md](plugins.local/)).
 
 ## Customization Tips
 
