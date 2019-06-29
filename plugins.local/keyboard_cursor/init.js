@@ -29,12 +29,13 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 						return App.hotkey_actions["article_scroll_down"]();
 
 					if (dir == "left") {
-						if (id != Article.getActive()) {
-							$("RROW-"+ id).addClassName("active");
-							return App.hotkey_actions["prev_article_noscroll"]();
-						} else {
+						if (id == Article.getActive()) {
 							$("RROW-"+ id).removeClassName("active").addClassName("Selected");
-							return App.isCombinedMode() ? Article.cdmScrollToId(id) : false;	// Close pane: false = dijit.byId("headlines-wrap-inner").removeChild(dijit.byId("content-insert"))
+							return App.isCombinedMode() ? Article.cdmScrollToId(id) : false;
+						} else {
+							id = hl[0];
+							$("RROW-"+ id).addClassName("Selected");
+							return App.isCombinedMode() ? Article.cdmScrollToId(id) : Headlines.correctHeadlinesOffset(id);
 						}
 					}
 

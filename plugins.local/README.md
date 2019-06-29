@@ -4,7 +4,7 @@ Use cursor keys for quick tree-style article navigation. Forces the following ho
 Hotkey | Command | Command when reading an article
 --- | --- | ---
 Up/down | Select article row | Scroll through active article
-Left | Read previous article | Deactivate active article / focus headlines
+Left | Jump to top | Deactivate active article / focus headlines
 Right | Read selected article | Read next article
 
 ### minimal_hotkeys
