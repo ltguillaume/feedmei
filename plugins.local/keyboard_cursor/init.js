@@ -44,13 +44,14 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 							return App.hotkey_actions["next_article_noscroll"]();
 						else {
 							$("RROW-"+ id).removeClassName("Selected");
-							return App.isCombinedMode() ? Article.setActive(id) : Article.view(id, false);
+							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmScrollToId(id)) : Article.view(id, false);
 						}
 					}
 
 					$("RROW-"+ id).removeClassName("Selected");
 					if (App.isCombinedMode()) Article.cdmUnsetActive();
-				}
+				} else if (dir == "right")
+					return App.hotkey_actions["next_article_noscroll"]();
 
 				var index = hl.indexOf(id);
 				if (dir == "up")
@@ -62,7 +63,6 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 				if (row) row.addClassName("Selected");
 
 				App.isCombinedMode() ? Article.cdmScrollToId(id) : Headlines.correctHeadlinesOffset(id);
-				if (index - 1 == hl.length) Headlines.loadMore();
 			};
 
 		});

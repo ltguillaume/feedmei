@@ -163,17 +163,11 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 #headlines-frame .icon,
 .feed-icon img,
 .feed-title img,
-.header img {
-	opacity: .75;
-	filter: grayscale(100%) !important;
-}
+.header img { filter: grayscale(100%) opacity(75%) !important }
 
 .dijitButton,
 .dijitCheckBox,
-.dijitComboButton {
-	opacity: 1;
-	filter: grayscale(60%) !important;
-}
+.dijitComboButton { filter: grayscale(60%) opacity(100%) !important }
 
 #headlines-frame .title:hover { text-decoration: none !important }
 
