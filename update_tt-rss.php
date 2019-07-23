@@ -15,21 +15,21 @@
 $password = '';	// sha256 hash
 $root = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss';	// root after extraction
 
-function remove($path) {
+function remove($path, $key = null, $print = true) {
 	chdir($GLOBALS['root']);
-	echo '<li>'. $path;
-	$error = false;
 	if (empty($path) || !file_exists($path)) {
-		echo ' <b>does not exist</b>';
+		echo "<li>$path <b>does not exist</b></li>";
 		return;
 	}
+	$error = false;
 	if (is_dir($path)) {
-		if (array_map(__FUNCTION__, glob($path .'/*')) == @rmdir($path))
+		$dir = glob(($path = $path .'/') .'*');
+		if (array_walk($dir, __FUNCTION__, false) == @rmdir($path))
 			$error = is_dir($path);
 	} else if (!unlink($path))
 			$error = true;
-	if ($error) echo ' <b>could not be deleted</b>';
-	echo '</li>';
+	if ($error) echo "<li>$path <b>could not be deleted</b></li>";
+	else if ($print) echo "<li>$path</li>";
 }
 
 function clean($dir = false, $keep, $ext = false) {
