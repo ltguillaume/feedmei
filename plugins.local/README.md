@@ -6,6 +6,7 @@ Hotkey | Command | Command when reading an article
 Up/down | Select article row | Scroll through active article
 Left | Jump to top | Deactivate active article / focus headlines
 Right | Read selected article | Read next article
+Ctrl+Left | Read previous article
 
 ### minimal_hotkeys
 Replaces the default keyboard shortcuts with the following set:

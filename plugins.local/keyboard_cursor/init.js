@@ -6,6 +6,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.getInitParam("hotkeys")[1]["(40)"] = "cursor_down";
 			App.getInitParam("hotkeys")[1]["(37)"] = "cursor_left";
 			App.getInitParam("hotkeys")[1]["(39)"] = "cursor_right";
+			App.getInitParam("hotkeys")[1]["^(37)"] = "prev_article_noscroll";
 
 			App.hotkey_actions["cursor_up"] = function () { Article.keyboardCursor("up") };
 			App.hotkey_actions["cursor_down"] = function () { Article.keyboardCursor("down") };
