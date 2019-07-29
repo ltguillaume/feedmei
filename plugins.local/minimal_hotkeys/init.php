@@ -4,18 +4,18 @@ class Minimal_Hotkeys extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.2, "
+		return array(1.3, "
 			[ / ]: Feed prev/next,
 			Left/right: Article prev/next,
 			Up/down: Scroll,
 			Enter: Open link,
 			B: Toggle sidebar,
-			C: Close/collapse article,
 			O: Reverse order,
 			P: Toggle published,
 			R: Refresh feed,
 			S: Toggle star,
 			U: Toggle unread,
+			X: Close article,
 			G A|F|N|P|R|S|T: Go to All|Fresh|Night mode|Published|Read|Starred|Tags
 			", "ltGuillaume");
 	}
@@ -34,12 +34,12 @@ class Minimal_Hotkeys extends Plugin {
 		$hotkeys["(40)|Down"] = "article_scroll_down";
 		$hotkeys["\r|Enter"] = "open_in_new_window";
 		$hotkeys["b"] = "collapse_sidebar";
-		$hotkeys["c"] = "close_article";
 		$hotkeys["o"] = "feed_reverse";
 		$hotkeys["p"] = "toggle_publ";
 		$hotkeys["r"] = "feed_refresh";
 		$hotkeys["s"] = "toggle_mark";
 		$hotkeys["u"] = "toggle_unread";
+		$hotkeys["x"] = "close_article";
 		$hotkeys["g a"] = "goto_all";
 		$hotkeys["g f"] = "goto_fresh";
 		$hotkeys["g n"] = "toggle_night_mode";

@@ -17,12 +17,12 @@ Left/right | Article prev/next
 Up/down | Scroll
 Enter | Open link
 B | Toggle sidebar
-C | Close/collapse article
 O | Reverse order
 P | Toggle published
 R | Refresh feed
 S | Toggle star
 U | Toggle unread
+X | Close article
 G A\|F\|N\|P\|R\|S\|T | Go to All\|Fresh\|Night mode\|Published\|Read\|Starred\|Tags
 
 ### toggle_night_mode
