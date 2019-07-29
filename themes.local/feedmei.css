@@ -267,6 +267,7 @@ body.ttrss_main .hl.active.Unread div.title a { color: #555 }
 div#floatingTitle a.title,
 div#floatingTitle.Unread a.title,
 body.ttrss_main .hl div.title a,
+div.cdm.active.Unread div.content,
 div.cdm.expanded div.header a.title,
 div.cdm.expanded.Unread.active div.header a.title,
 div.cdm.expandable.Unread.active div.header a.title { color: #777 }
