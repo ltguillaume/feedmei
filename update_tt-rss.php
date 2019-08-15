@@ -94,7 +94,7 @@ if(isset($_POST['submit'])) {
 		remove('tests');
 
 		echo '</ul><li>Removing unused plugins...</li><ul>';
-		clean('plugins', ['af_readability', 'af_redditimgur', 'af_zz_imgproxy', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']);
+		clean('plugins', ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']);
 		
 		echo '</ul><li>Removing unused languages (all but Dutch and English)...</li><ul>';
 		clean('locale', ['nl_NL']);
