@@ -23,17 +23,19 @@ div.cdm.expanded {
 }
 
 .content {
-	max-width: 800px;
+	max-width: 50em;
 	margin: 0 auto;
 }
 
-/* Align first article image to right */
+/* Align right first article image */
 @media screen and (min-width: 800px) {
 	.content > figure:first-child,
+	.content header + div > figure,
 	.content > p:nth-child(-n+2) > img:first-child,
 	.content > div:nth-child(-n+2) > img:first-child,
 	.content > div:nth-child(-n+2) > figure:first-child,
 	.content-inner > figure:first-child,
+	.content-inner header + div > figure,
 	.content-inner > p:nth-child(-n+2) > img:first-child,
 	.content-inner > div:nth-child(-n+2) > img:first-child,
 	.content-inner > div:nth-child(-n+2) > figure:first-child {
@@ -58,7 +60,8 @@ div.cdm.expanded {
 
 .content h1,
 .content h2,
-.content h3 {
+.content h3,
+.content h4 {
 	font-family: "PT Sans", sans-serif !important;
 	font-size: 19px !important;
 }

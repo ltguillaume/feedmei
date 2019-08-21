@@ -6,6 +6,7 @@ A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspi
 ![Combined Night Mode](SCREENSHOT2.png)
 
 ## Installation
+_This theme can only be used in Tiny Tiny RSS v19.2 or later._  
 Just copy the contents of `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation. You can also copy `plugins.local` to your installation for additional functionality (see [README.md](plugins.local/)).
 
 ## Customization Tips
@@ -23,7 +24,7 @@ div.cdm.expanded {
 }
 
 .content {
-	max-width: 800px;
+	max-width: 50em;
 	margin: 0 auto;
 }
 ```
@@ -37,6 +38,3 @@ with
 ```
 				ctr.scrollTop = e.offsetTop - (App.getInitParam("cdm_expanded") ? 21 : 0);
 ```
-
-## NOTE
-[This is](https://git.tt-rss.org/fox/tt-rss/commit/5829ee9498cedace29fe9ba822ab8c28d7cfcd0d) the last Tiny Tiny RSS commit the theme has been fully tested on.

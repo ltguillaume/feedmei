@@ -278,7 +278,7 @@ body.ttrss_main #headlines-frame div.feed-title a.title { font-weight: normal }
 
 .header .title a,
 body.ttrss_main .hl.Unread div.title a,
-div.cdm.expanded.active div.header a.title,
+div.cdm.expanded div.header a.title,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expandable.Unread div.header a.title {
 	font-weight: bold;
