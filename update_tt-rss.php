@@ -13,7 +13,10 @@
  */
 
 $password = '';	// sha256 hash
-$root = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss';	// root after extraction
+$keep_languages = ['en', 'nl'];
+$keep_locale = ['nl_NL'];
+$keep_plugins = ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared'];
+$root = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss';	// folder from extracted zip
 
 function remove($path, $key = null, $print = true) {
 	chdir($GLOBALS['root']);
@@ -47,7 +50,7 @@ function fart($file, $find, $replace) {
 }
 
 if(isset($_POST['submit'])) {
-	if (!isset($_POST['password']) || hash('sha256', $_POST['password']) != $password)
+	if (!empty($password) && (!isset($_POST['password']) || hash('sha256', $_POST['password']) != $password))
 		die('Password incorrect');
 	if (isset($_POST['download'])) {
 		echo '<li>Downloading latest commit from master branch...</li>';
@@ -94,13 +97,16 @@ if(isset($_POST['submit'])) {
 		remove('tests');
 
 		echo '</ul><li>Removing unused plugins...</li><ul>';
-		clean('plugins', ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']);
+		clean('plugins', $keep_plugins);
 		
 		echo '</ul><li>Removing unused languages (all but Dutch and English)...</li><ul>';
-		clean('locale', ['nl_NL']);
+		clean('locale', $keep_locale);
 		foreach(glob('{,*,*/*,*/*/*}/nls', GLOB_BRACE|GLOB_ONLYDIR) as $dir)
-			clean($dir, ['en','nl']);
-		clean('lib/dojo/nls', ['colors.js', 'tt-rss-layer_ROOT.js', 'tt-rss-layer_en-us.js', 'tt-rss-layer_nl-nl.js'], '.js');
+			clean($dir, $keep_languages);
+		$keep_nls = ['colors.js', 'tt-rss-layer_ROOT.js', 'tt-rss-layer_en-us.js'];
+		foreach ($keep_locale as $l)
+			array_push($keep_nls, 'tt-rss-layer_'. str_replace('_', '-', strtolower($l)) .'.js');
+		clean('lib/dojo/nls', $keep_nls, '.js');
 
 		echo '</ul><li>Moving files into place...</li><ul>';
 		print_r(shell_exec('cp -Rf '. $GLOBALS['root'] .'/* '. pathinfo(__FILE__, PATHINFO_DIRNAME) .'/'));
@@ -117,7 +123,7 @@ if(isset($_POST['submit'])) {
 		<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
 			<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
 			<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
-			<p>Enter password: <input type='password' name='password' autofocus></p>
+			<?php if (!empty($password)): ?><p>Enter password: <input type='password' name='password' autofocus></p><?php endif ?>
 			<p><input type='submit' value='Submit' name='submit'></p>
 		</form>
 	</body>
