@@ -4,12 +4,13 @@ class Keyboard_Cursor extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.0, "
-			Use cursor keys for quick tree-style article navigation.
-			(Key: when no article active | when article active)
-			Up/down: select article row | scroll active article,
-			Left: read previous article | close/deactivate active article,
-			Right: read selected article | read next article
+		return array(1.2, "
+			Use cursor keys for tree-style article navigation.
+			(Key: Command | Command with opened article)
+			Up/Down: Select article row | Scroll through active article,
+			Left: Jump to top | Deactivate article / focus headlines,
+			Right: Read selected article | Read next article,
+			Ctrl+Left/Right: Read previous/next article
 			", "ltGuillaume");
 	}
 

@@ -1,12 +1,12 @@
 ### keyboard_cursor
 Use cursor keys for quick tree-style article navigation. Forces the following hotkeys:
 
-Hotkey | Command | Command when reading an article
+Hotkey | Command | Command with opened article
 --- | --- | ---
-Up/down | Select article row | Scroll through active article
-Left | Jump to top | Deactivate active article / focus headlines
+Up/Down | Select article row | Scroll through active article
+Left | Jump to top | Deactivate article / focus headlines
 Right | Read selected article | Read next article
-Ctrl+Left | Read previous article
+Ctrl+Left/Right | Read previous/next article
 
 ### minimal_hotkeys
 Replaces the default keyboard shortcuts with the following set:

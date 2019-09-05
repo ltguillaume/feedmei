@@ -1,5 +1,7 @@
-# FeedMei
+# FeedMei Theme + Plugins for Tiny Tiny RSS
 A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspired by Feedly. Built by making the minimal amount of changes to the default theme.
+
+This repo also includes a set of plugins ([see details](plugins.local/)). Finally, there's an [update & cleanup script](update_tt-rss.php) to easily update your Tiny Tiny RSS instance to the latest commit.
 
 ![Combined Mode](SCREENSHOT.png)
 

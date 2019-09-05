@@ -7,6 +7,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.getInitParam("hotkeys")[1]["(37)"] = "cursor_left";
 			App.getInitParam("hotkeys")[1]["(39)"] = "cursor_right";
 			App.getInitParam("hotkeys")[1]["^(37)"] = "prev_article_noscroll";
+			App.getInitParam("hotkeys")[1]["^(39)"] = "next_article_noscroll";
 
 			App.hotkey_actions["cursor_up"] = function () { Article.keyboardCursor("up") };
 			App.hotkey_actions["cursor_down"] = function () { Article.keyboardCursor("down") };
@@ -31,8 +32,9 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 
 					if (dir == "left") {
 						if (id == Article.getActive()) {
-							$("RROW-"+ id).removeClassName("active").addClassName("Selected");
-							return App.isCombinedMode() ? Article.cdmScrollToId(id) : false;
+							$("RROW-"+ id).removeClassName("active").addClassName("Selected")
+							App.isCombinedMode() ? Article.cdmScrollToId(id) : false;
+							return $("headlines-frame").focus();
 						} else {
 							id = hl[0];
 							$("RROW-"+ id).addClassName("Selected");
