@@ -7,6 +7,7 @@ Up/Down | Select article row | Scroll through active article
 Left | Jump to top | Deactivate article / focus headlines
 Right | Read selected article | Read next article
 Ctrl+Left/Right | Read previous/next article
+(Numpad)0 | Toggle unread
 
 ### minimal_hotkeys
 Replaces the default keyboard shortcuts with the following set:

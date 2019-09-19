@@ -4,13 +4,14 @@ class Keyboard_Cursor extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.2, "
+		return array(1.3, "
 			Use cursor keys for tree-style article navigation.
 			(Key: Command | Command with opened article)
 			Up/Down: Select article row | Scroll through active article,
 			Left: Jump to top | Deactivate article / focus headlines,
 			Right: Read selected article | Read next article,
-			Ctrl+Left/Right: Read previous/next article
+			Ctrl+Left/Right: Read previous/next article,
+			(Numpad)0: Toggle unread
 			", "ltGuillaume");
 	}
 

@@ -276,6 +276,9 @@ div.cdm.expandable div.header a.title,
 body.ttrss_main .hl:not(.Unread) .hl-content a.title,
 body.ttrss_main #headlines-frame div.feed-title a.title { font-weight: normal }
 
+body.ttrss_main #headlines-frame pre,
+body.ttrss_main .dijitContentPane pre { font-size: 1em }
+
 .header .title a,
 body.ttrss_main .hl.Unread div.title a,
 div.cdm.expanded div.header a.title,
