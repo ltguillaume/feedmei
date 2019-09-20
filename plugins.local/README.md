@@ -6,6 +6,7 @@ Hotkey | Command | Command with opened article
 Up/Down | Select article row | Scroll through active article
 Left | Jump to top | Deactivate article / focus headlines
 Right | Read selected article | Read next article
+Enter | Read selected article | Open link in new window
 Ctrl+Left/Right | Read previous/next article
 (Numpad)0 | Toggle unread
 
@@ -14,10 +15,10 @@ Replaces the default keyboard shortcuts with the following set:
 
 Hotkey | Command
 --- | ---
-[ / ] | Feed prev/next
-Left/right | Article prev/next
+[ / ] | Feed previous/next
+Left/right | Article previous/next
 Up/down | Scroll
-Enter | Open link
+Enter | Open link in new window
 B | Toggle sidebar
 O | Reverse order
 P | Toggle published
