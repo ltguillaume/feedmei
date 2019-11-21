@@ -285,7 +285,7 @@ div.cdm.expanded div.header a.title,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expandable.Unread div.header a.title {
 	font-weight: bold;
-	letter-spacing: .005em;
+	letter-spacing: .001em;
 }
 	body.ttrss_main .hl div.title a span { letter-spacing: 0 }
 

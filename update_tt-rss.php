@@ -4,11 +4,11 @@
  *	Removal:
  *	- Removes useless folders: install, tests, feed-icons (moved to cache/feed-icons)
  *	- Removes useless files: .empty, .gitignore, *.less, *.map etc.
- *	- Removes plugins I don't use
- *	- Removes all language files, except for Dutch and English
+ *	- Removes plugins, except for those set in $keep_plugins
+ *	- Removes all language files, except for those set in $keep_languages / $keep_locale
  *	- Unlinks default.css.less mapping in default.css (prevents console error)
  *	Tweaks:
- *	- Adds <g> to the allowed elements in articles (for TorrentFreak articles)
+ *	- Adds <g>, <main> and <article> to the allowed elements in articles
  *	- Adds a 21px margin for when scrolling to next/previous article
  */
 
@@ -72,14 +72,15 @@ if(isset($_POST['submit'])) {
 	if ($res === true) {
 		$zip->extractTo($target_path);
 		$zip->close();
+		unlink($target_file);
 		echo '<li>Contents have been extracted to <b>'. $target_path .'</b></li>';
 
 		chdir($GLOBALS['root']);
 
 		echo '<li>Unlinking .less source mapping in default.css</li>';
 		fart('css/default.css', '/*# sourceMappingURL=default.css.map */', '');
-		echo '<li>Adding &lt;g&gt; to allowed elements for TorrentFreak articles</li>';
-		fart('include/functions.php', '$allowed_elements = array(', '$allowed_elements = array(\'g\', ');
+		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
+		fart('include/functions.php', '$allowed_elements = array(', '$allowed_elements = array(\'g\', \'main\', \'article\', ');
 		echo '<li>Adding margin for scrolling to articles</li>';
 		fart('js/Article.js', 'ctr.scrollTop = e.offsetTop;', 'ctr.scrollTop = e.offsetTop - (App.getInitParam("cdm_expanded") ? 21 : 0);');
 
@@ -95,11 +96,12 @@ if(isset($_POST['submit'])) {
 		remove('feed-icons');
 		remove('install');
 		remove('tests');
+		remove('utils');
 
 		echo '</ul><li>Removing unused plugins...</li><ul>';
 		clean('plugins', $keep_plugins);
 		
-		echo '</ul><li>Removing unused languages (all but Dutch and English)...</li><ul>';
+		echo '</ul><li>Removing unused languages (all but '. implode(', ', $keep_locale) .', '. implode(', ', $keep_languages) .')...</li><ul>';
 		clean('locale', $keep_locale);
 		foreach(glob('{,*,*/*,*/*/*}/nls', GLOB_BRACE|GLOB_ONLYDIR) as $dir)
 			clean($dir, $keep_languages);
