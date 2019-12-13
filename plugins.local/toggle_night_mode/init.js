@@ -2,6 +2,10 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 	ready(function () {
 		PluginHost.register(PluginHost.HOOK_INIT_COMPLETE, () => {
 
+			App.hotkey_actions["toggle_night_mode"] = function () {
+				App.toggleNightMode()
+			};
+
 			App.toggleNightMode = function () {
 				const link = $("theme_css");
 
