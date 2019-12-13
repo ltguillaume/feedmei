@@ -50,6 +50,7 @@ function fart($file, $find, $replace) {
 }
 
 if(isset($_POST['submit'])) {
+	echo '<style>ul{columns:3} ul>li{font-size:.9rem}</style>';
 	if (!empty($password) && (!isset($_POST['password']) || hash('sha256', $_POST['password']) != $password))
 		die('Password incorrect');
 	if (isset($_POST['download'])) {
@@ -89,13 +90,13 @@ if(isset($_POST['submit'])) {
 			remove($file);
 		remove('.editorconfig');
 		remove('.gitignore');
-		remove('.gitlab-ci.yml');
+//	remove('.gitlab-ci.yml');
 		remove('CONTRIBUTING.md');
 		remove('COPYING');
 		remove('README.md');
 		remove('feed-icons');
 		remove('install');
-		remove('tests');
+//	remove('tests');
 		remove('utils');
 
 		echo '</ul><li>Removing unused plugins...</li><ul>';
@@ -126,7 +127,7 @@ if(isset($_POST['submit'])) {
 			<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
 			<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
 			<?php if (!empty($password)): ?><p>Enter password: <input type='password' name='password' autofocus></p><?php endif ?>
-			<p><input type='submit' value='Submit' name='submit'></p>
+			<p><input id="submit" type='submit' value='Submit' name='submit' onclick="submit.value='Please wait...'"></p>
 		</form>
 	</body>
 </html>

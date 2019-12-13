@@ -132,7 +132,8 @@ body.ttrss_main #overlay_inner {
 }
 
 .flat .dijitTextBoxHover,
-.flat .dijitTextBoxFocused { border-color: #ccc }
+.flat .dijitTextBoxFocused,
+body.ttrss_main div#cmdline { border-color: #ccc }
 
 #toolbar .dijitButtonNode,
 #toolbar table.dijitSelect { box-shadow: none !important }
