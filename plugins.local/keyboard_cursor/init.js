@@ -7,7 +7,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.getInitParam("hotkeys")[1]["(37)"]  = "cursor_left";
 			App.getInitParam("hotkeys")[1]["(39)"]  = "cursor_right";
 			App.getInitParam("hotkeys")[1]["\r"]    = "cursor_enter";
-			App.getInitParam("hotkeys")[1]["^(37)"] = "prev_article_noscroll";
+			App.getInitParam("hotkeys")[1]["^(37)"] = "cursor_prev_article_noscroll";
 			App.getInitParam("hotkeys")[1]["^(39)"] = "next_article_noscroll";
 			App.getInitParam("hotkeys")[1]["0"]     = "toggle_unread";
 
@@ -16,6 +16,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.hotkey_actions["cursor_left"]  = function () { Article.keyboardCursor("left") };
 			App.hotkey_actions["cursor_right"] = function () { Article.keyboardCursor("right") };
 			App.hotkey_actions["cursor_enter"] = function () { Article.keyboardCursor("enter") };
+			App.hotkey_actions["cursor_prev_article_noscroll"] = function () { Article.keyboardCursor("prev") };
 
 			Article.keyboardCursor = function (key) {
 				var hl = Headlines.getLoaded();
@@ -23,6 +24,13 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 
 				var id = Headlines.getSelected();
 				id = (id.length > 0 ? id[id.length - 1] : 0);
+
+				if (key == "prev") {
+					Headlines.move(key, {noscroll: true});
+					if (id && id == Headlines.getSelected())
+						Headlines.move(key, {noscroll: true});
+					return;
+				}
 
 				if (id) {
 					$("RROW-"+ id).removeClassName("Selected");
@@ -53,7 +61,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmScrollToId(id)) : Article.view(id, false);
 						}
 					}
-					
+
 					if (key == "enter") {
 						if (id == Article.getActive())
 							return Article.openInNewWindow(id);

@@ -6,7 +6,7 @@
  *	- Removes useless files: .empty, .gitignore, *.less, *.map etc.
  *	- Removes plugins, except for those set in $keep_plugins
  *	- Removes all language files, except for those set in $keep_languages / $keep_locale
- *	- Unlinks default.css.less mapping in default.css (prevents console error)
+ *	- Unlinks light.css.less mapping in light.css (prevents console error)
  *	Tweaks:
  *	- Adds <g>, <main> and <article> to the allowed elements in articles
  *	- Adds a 21px margin for when scrolling to next/previous article
@@ -78,8 +78,8 @@ if(isset($_POST['submit'])) {
 
 		chdir($GLOBALS['root']);
 
-		echo '<li>Unlinking .less source mapping in default.css</li>';
-		fart('css/default.css', '/*# sourceMappingURL=default.css.map */', '');
+		echo '<li>Unlinking .less source mapping in light.css</li>';
+		fart('themes/light.css', '/*# sourceMappingURL=light.css.map */', '');
 		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
 		fart('include/functions.php', '$allowed_elements = array(', '$allowed_elements = array(\'g\', \'main\', \'article\', ');
 		echo '<li>Adding margin for scrolling to articles</li>';
