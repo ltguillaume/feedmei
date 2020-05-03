@@ -9,6 +9,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.getInitParam("hotkeys")[1]["\r"]    = "cursor_enter";
 			App.getInitParam("hotkeys")[1]["^(37)"] = "cursor_prev_article_noscroll";
 			App.getInitParam("hotkeys")[1]["^(39)"] = "next_article_noscroll";
+			App.getInitParam("hotkeys")[1]["(45)"]  = "toggle_unread";
 			App.getInitParam("hotkeys")[1]["0"]     = "toggle_unread";
 
 			App.hotkey_actions["cursor_up"]    = function () { Article.keyboardCursor("up") };

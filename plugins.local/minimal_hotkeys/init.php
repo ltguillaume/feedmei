@@ -4,19 +4,19 @@ class Minimal_Hotkeys extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.3, "
+		return array(1.4, "
 			[ / ]: Feed prev/next,
 			Left/right: Article prev/next,
 			Up/down: Scroll,
 			Enter: Open link,
-			B: Toggle sidebar,
-			O: Reverse order,
-			P: Toggle published,
-			R: Refresh feed,
-			S: Toggle star,
-			U: Toggle unread,
-			X: Close article,
-			G A|F|N|P|R|S|T: Go to All|Fresh|Night mode|Published|Read|Starred|Tags
+			b: Toggle sidebar,
+			o: Reverse order,
+			p: Toggle published,
+			r: Refresh feed,
+			s: Toggle star,
+			u: Toggle unread,
+			x: Close article,
+			g a|f|n|p|r|s|t: Go to All|Fresh|Night mode|Published|Read|Starred|Tags
 			", "ltGuillaume");
 	}
 
