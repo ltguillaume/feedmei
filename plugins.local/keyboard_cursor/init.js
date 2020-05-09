@@ -45,12 +45,12 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 					if (key == "left") {
 						if (id == Article.getActive()) {
 							$("RROW-"+ id).removeClassName("active").addClassName("Selected")
-							App.isCombinedMode() ? Article.cdmScrollToId(id) : false;
+							App.isCombinedMode() ? Article.cdmMoveToId(id) : false;
 							return $("headlines-frame").focus();
 						} else {
 							id = hl[0];
 							$("RROW-"+ id).addClassName("Selected");
-							return App.isCombinedMode() ? Article.cdmScrollToId(id) : Headlines.correctHeadlinesOffset(id);
+							return App.isCombinedMode() ? Article.cdmMoveToId(id) : Headlines.correctHeadlinesOffset(id);
 						}
 					}
 
@@ -59,7 +59,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 							return App.hotkey_actions["next_article_noscroll"]();
 						else {
 							$("RROW-"+ id).removeClassName("Selected");
-							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmScrollToId(id)) : Article.view(id, false);
+							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmMoveToId(id)) : Article.view(id, false);
 						}
 					}
 
@@ -67,7 +67,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 						if (id == Article.getActive())
 							return Article.openInNewWindow(id);
 						else
-							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmScrollToId(id)) : Article.view(id, false);
+							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmMoveToId(id)) : Article.view(id, false);
 					}
 
 					$("RROW-"+ id).removeClassName("Selected");
@@ -84,7 +84,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 				var row = $("RROW-"+ id);
 				if (row) row.addClassName("Selected");
 
-				App.isCombinedMode() ? Article.cdmScrollToId(id) : Headlines.correctHeadlinesOffset(id);
+				App.isCombinedMode() ? Article.cdmMoveToId(id) : Headlines.correctHeadlinesOffset(id);
 			};
 
 		});

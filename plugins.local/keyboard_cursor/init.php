@@ -4,7 +4,7 @@ class Keyboard_Cursor extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.6, "
+		return array(1.7, "
 			Use cursor keys for tree-style article navigation.
 			(Key: Command | Command with opened article)
 			Up/Down: Select article row | Scroll through active article,
