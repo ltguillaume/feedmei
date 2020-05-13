@@ -245,6 +245,8 @@ div.cdm.expandable.active:not(.Unread) {
 }
 	div.cdm.expanded.active:not(.Unread) { border: 1px solid #ddd }
 
+div.cdm.expandable:not(.active) .header[stuck] { border-bottom-width: 0 }
+
 .header .row a,
 #toolbar .dijitOpened *,
 #content-insert div.content,
@@ -290,6 +292,11 @@ div.cdm.expandable.Unread div.header a.title {
 	letter-spacing: .001em;
 }
 	body.ttrss_main .hl div.title a span { letter-spacing: 0 }
+
+div.cdm .footer {
+	height: auto;
+	min-height: 30px;
+}
 
 div.cdm.expanded .footer {
 	padding: 0 3px 0 0;
