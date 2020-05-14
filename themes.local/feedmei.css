@@ -235,6 +235,16 @@ div.cdm.expanded {
 	border: 1px solid #eee;
 }
 
+div.cdm .header[stuck] {
+	opacity: 1;
+	z-index: 1000;
+}
+	div.cdm.expandable:not(.active) .header[stuck] { border-bottom-width: 0 }
+	div.cdm.expanded .header[stuck] {
+		margin: 0 -200%;
+		padding: 0 200%;
+	}
+
 #headlines-frame.normal,
 #headlines-frame .feed-title,
 #content-insert,
@@ -244,8 +254,6 @@ div.cdm.expandable.active:not(.Unread) {
 	color: #444;
 }
 	div.cdm.expanded.active:not(.Unread) { border: 1px solid #ddd }
-
-div.cdm.expandable:not(.active) .header[stuck] { border-bottom-width: 0 }
 
 .header .row a,
 #toolbar .dijitOpened *,
