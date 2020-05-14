@@ -84,7 +84,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 				var row = $("RROW-"+ id);
 				if (row) row.addClassName("Selected");
 
-				App.isCombinedMode() ? Article.cdmMoveToId(id) : Headlines.correctHeadlinesOffset(id);
+				App.getInitParam("cdm_expanded") ? Article.cdmMoveToId(id) : Headlines.correctHeadlinesOffset(id);
 			};
 
 		});
