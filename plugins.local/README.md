@@ -28,6 +28,13 @@ u | Toggle unread
 x | Close article
 g a\|f\|n\|p\|r\|s\|t | Go to All\|Fresh\|Night mode\|Published\|Read\|Starred\|Tags
 
+### quick_unsubscribe
+Speed up your cleaning rage with these hotkeys. Hotkeys to speed up the process of going through many feeds and quickly unsubscribe or mark all articles as read.
+Hotkey | Command
+--- | ---
+M | Mark all articles in feed as read _and_ open next feed
+u | Unsubscribe from feed _and_ open next feed
+
 ### toggle_night_mode
 Allow night modes for custom themes (use `yourtheme_night.css` as filename). Reintroduces `a N` hotkey to toggle between day and night themes.
 

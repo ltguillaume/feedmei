@@ -235,10 +235,7 @@ div.cdm.expanded {
 	border: 1px solid #eee;
 }
 
-div.cdm .header[stuck] {
-	opacity: 1;
-	z-index: 1000;
-}
+div.cdm .header[stuck] { opacity: 1 !important }
 	div.cdm.expandable:not(.active) .header[stuck] { border-bottom-width: 0 }
 	div.cdm.expanded .header[stuck] {
 		margin: 0 -200%;
@@ -248,6 +245,8 @@ div.cdm .header[stuck] {
 #headlines-frame.normal,
 #headlines-frame .feed-title,
 #content-insert,
+div.cdm.expandable.Selected,
+body.ttrss_main .hl.Selected,
 div.cdm.expanded.active:not(.Unread),
 div.cdm.expandable.active:not(.Unread) {
 	background: #f9f9f9 !important;
@@ -261,6 +260,7 @@ div.cdm.expandable.active:not(.Unread) {
 div.cdm.active div.content,
 div.cdm.expanded.active div.header a.title,
 div.cdm.expandable.active div.header a.title,
+div.cdm.expandable.Selected:not(.active) a,
 body.ttrss_main .hl.active :not(i),
 body.ttrss_main .hl.active .feed a,
 body.ttrss_main .hl.active .hl-content a.title { color: #444 }

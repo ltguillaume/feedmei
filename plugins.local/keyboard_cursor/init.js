@@ -50,7 +50,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 						} else {
 							id = hl[0];
 							$("RROW-"+ id).addClassName("Selected");
-							return App.isCombinedMode() ? Article.cdmMoveToId(id) : Headlines.correctHeadlinesOffset(id);
+							return App.isCombinedMode() ? Article.cdmMoveToId(id) : Headlines.scrollToArticleId(id);
 						}
 					}
 
@@ -84,7 +84,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 				var row = $("RROW-"+ id);
 				if (row) row.addClassName("Selected");
 
-				App.getInitParam("cdm_expanded") ? Article.cdmMoveToId(id) : Headlines.correctHeadlinesOffset(id);
+				App.getInitParam("cdm_expanded") ? Article.cdmMoveToId(id) : Headlines.scrollToArticleId(id);
 			};
 
 		});
