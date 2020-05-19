@@ -17,7 +17,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.hotkey_actions["cursor_left"]  = function () { Article.keyboardCursor("left") };
 			App.hotkey_actions["cursor_right"] = function () { Article.keyboardCursor("right") };
 			App.hotkey_actions["cursor_enter"] = function () { Article.keyboardCursor("enter") };
-			App.hotkey_actions["cursor_prev_article_noscroll"] = function () { Article.keyboardCursor("prev") };
+			App.hotkey_actions["cursor_prev_article_noscroll"] = function () { Headlines.move("prev", {force_previous: true}) };
 
 			Article.keyboardCursor = function (key) {
 				var hl = Headlines.getLoaded();
@@ -25,13 +25,6 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 
 				var id = Headlines.getSelected();
 				id = (id.length > 0 ? id[id.length - 1] : 0);
-
-				if (key == "prev") {
-					Headlines.move(key, {noscroll: true});
-					if (id && id == Headlines.getSelected())
-						Headlines.move(key, {noscroll: true});
-					return;
-				}
 
 				if (id) {
 					$("RROW-"+ id).removeClassName("Selected");
