@@ -4,10 +4,11 @@
  *	Tweaks:
  *	- Adds <g>, <main> and <article> to the allowed elements in articles
  *	- Adds a 19px margin for when scrolling to next/previous article
- *  - Do not include the plugin names list when calculating article hashes:
+ *  - Change the way article hashes are calculated:
  *    causes the option "Mark updated articles unread" to be triggered only when
- *    the source has been updated, not when you change your plugin configuration
- *    WARNING: THIS WILL RECALCULATE HASHES AND COULD MARK ARTICLES AS UNREAD
+ *    the article contents have been updated, not when metadata have changed or
+ *    after you have changed your plugin configuration
+ *    WARNING: THIS WILL RECALCULATE HASHES AND COULD MARK MANY ARTICLES AS UNREAD
  *  - Modify line_scroll_offset for scrolling with arrow up/down
  *	Removal:
  *	- Removes useless folders: install, tests, feed-icons (moved to cache/feed-icons)
@@ -17,15 +18,15 @@
  *	- Unlinks light.css.less mapping in light.css (prevents console error)
  */
 
-$password     = '';	// sha256 hash
+$password     = ''; // sha256 hash
 // Tweaks
-$no_plugins_hash = FALSE; // use FALSE to disable changes
-$line_offset     = 240;  // use FALSE to disable changes
+$alt_hash     = FALSE; // use FALSE to disable changes
+$line_offset  = 240;  // use FALSE to disable changes
 // Removal
-$keep_langs      = ['en', 'nl']; // use FALSE to disable
-$keep_locale     = ['nl_NL'];    // use FALSE to disable
-$keep_plugins    = ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']; // use FALSE to disable
-$root            = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss'; // folder from extracted zip
+$keep_langs   = ['en', 'nl']; // use FALSE to disable
+$keep_locale  = ['nl_NL'];    // use FALSE to disable
+$keep_plugins = ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']; // use FALSE to disable
+$root         = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss'; // folder from extracted zip
 
 function remove($path, $key = null, $print = true) {
 	chdir($GLOBALS['root']);
@@ -102,9 +103,10 @@ if (isset($_POST['submit'])) {
 			fart('js/Headlines.js', 'line_scroll_offset: 120', '/* Changed by tt-rss updater script */ line_scroll_offset: '. $line_offset);
 		} else echo '<li><b>Skipping</b> line offset change</li>';
 		
-		if ($no_plugins_hash) {
+		if ($alt_hash) {
 			echo '<li>Changing the way article hashes are calculated: plugin names list is excluded.</li>';
-			fart('classes/rssutils.php', 'return sha1(implode(",", $pluginhost->get_plugin_names()) . $tmp)', '/* Changed by tt-rss updater script */ return sha1($tmp)');
+			fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
+				'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
 		} else echo '<li><b>Skipping</b> article hash change: plugin names list is still used to calculate hash.</li>';
 
 		echo '<li>Removing useless files...</li><ul>';

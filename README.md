@@ -7,6 +7,13 @@ This repo also includes a set of plugins ([see details](plugins.local/)). Finall
 
 ![Combined Night Mode](SCREENSHOT2.png)
 
+## FeedMei+
+FeedMei+ (`feedmei+.css`) adds a few other tweaks:
+- Use the font _PT Serif_ for article contents
+- To optimize legibility, set a maximum width for the article contents
+- Increase the font size for article headers
+- Reduce the size of the first article image and align it to the right
+
 ## Installation
 _This theme can only be used in Tiny Tiny RSS v19.2 or later. FeedMei v2.1.8+ only works on commit [4ab3854aed](https://git.tt-rss.org/git/tt-rss/commit/4ab3854aede3882779138d91594b588e1a38c70e) or later._  
 Just copy the contents of `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation. You can also copy `plugins.local` to your installation for additional functionality (see [README.md](plugins.local/)).
