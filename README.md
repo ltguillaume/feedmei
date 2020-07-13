@@ -13,6 +13,7 @@ FeedMei+ (`feedmei+.css`) adds a few other tweaks:
 - To optimize legibility, set a maximum width for the article contents
 - Increase the font size for article headers
 - Reduce the size of the first article image and align it to the right
+- Enable smooth scrolling
 
 ## Installation
 _This theme can only be used in Tiny Tiny RSS v19.2 or later. FeedMei v2.1.8+ only works on commit [4ab3854aed](https://git.tt-rss.org/git/tt-rss/commit/4ab3854aede3882779138d91594b588e1a38c70e) or later._  
@@ -41,9 +42,9 @@ div.cdm.expanded {
 ### Align article top
 In combined mode, put some space between the article and the header when jumping to previous/next article with hotkeys. In `rss/js/Article.js` replace:
 ```
-				ctr.scrollTop = e.offsetTop;
+ctr.scrollTop = row.offsetTop;
 ```
 with
 ```
-				ctr.scrollTop = e.offsetTop - (App.getInitParam("cdm_expanded") ? 21 : 0);
+ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0);
 ```

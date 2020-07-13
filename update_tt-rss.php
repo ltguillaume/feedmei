@@ -96,7 +96,7 @@ if (isset($_POST['submit'])) {
 		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
 		fart('include/functions.php', '$allowed_elements = array(', '/* Changed by tt-rss updater script */ $allowed_elements = array(\'g\', \'main\', \'article\', ');
 		echo '<li>Adding margin for scrolling to articles</li>';
-		fart('js/Article.js', 'ctr.scrollTop = row.offsetTop;', '/* Changed by tt-rss updater script */ ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 19 : 0);');
+		fart('js/Article.js', 'ctr.scrollTop = row.offsetTop;', '/* Changed by tt-rss updater script */ ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0);');
 
 		if ($line_offset) {
 			echo '<li>Changing line offset for scrolling with cursor keys to '. $line_offset .'px</li>';
@@ -104,7 +104,7 @@ if (isset($_POST['submit'])) {
 		} else echo '<li><b>Skipping</b> line offset change</li>';
 		
 		if ($alt_hash) {
-			echo '<li>Changing the way article hashes are calculated: plugin names list is excluded.</li>';
+			echo '<li>Excluding all fields apart from content in article hash calculation.</li>';
 			fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
 				'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
 		} else echo '<li><b>Skipping</b> article hash change: plugin names list is still used to calculate hash.</li>';

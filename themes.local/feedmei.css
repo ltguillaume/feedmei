@@ -206,11 +206,12 @@ a:hover,
 .dijitMenuItem.dijitDisabled .dijitMenuItemLabel { color: #160 !important }
 
 .ttrss_prefs .dijitTreeRowSelected,
-.dijitMenuItemSelected td,
-.dijitTreeRowSelected .filterRules li {
+.dijitMenuItemSelected td {
 	color: #909090 !important;
 	background-color: #eee !important;
 }
+
+.dijitTreeRowSelected .filterRules li:not(.inverse) { color: green !important }
 
 body.ttrss_main .hl,
 body.ttrss_main .hl.Unread,

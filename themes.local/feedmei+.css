@@ -45,6 +45,9 @@ div.cdm.expanded {
 	}
 }
 
+/* Enable smooth scrolling */
+#headlines-frame, .content { scroll-behavior: smooth }
+
 /* Set custom article fonts */
 .cdm.expanded .header .title,
 .cdm.expandable.active .header .title,
