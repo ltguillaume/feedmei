@@ -6,8 +6,8 @@
  *	- Adds a 19px margin for when scrolling to next/previous article
  *  - Change the way article hashes are calculated:
  *    causes the option "Mark updated articles unread" to be triggered only when
- *    the article title or contents have been updated, not when metadata have changed
- *    or after you have changed your plugin configuration
+ *    the article contents have been updated, not when metadata have changed or
+ *    after you have changed your plugin configuration
  *    WARNING: THIS WILL RECALCULATE HASHES AND COULD MARK MANY ARTICLES AS UNREAD
  *  - Modify line_scroll_offset for scrolling with arrow up/down
  *	Removal:
@@ -91,8 +91,8 @@ if (isset($_POST['submit'])) {
 
 		chdir($GLOBALS['root']);
 
-//		echo '<li>Unlinking .less source mapping in light.css</li>';
-//		fart('themes/light.css', '/*# sourceMappingURL=light.css.map */', '');
+		echo '<li>Unlinking .less source mapping in light.css</li>';
+		fart('themes/light.css', '/*# sourceMappingURL=light.css.map */', '');
 		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
 		fart('include/functions.php', '$allowed_elements = array(', '/* Changed by tt-rss updater script */ $allowed_elements = array(\'g\', \'main\', \'article\', ');
 		echo '<li>Adding margin for scrolling to articles</li>';
@@ -104,13 +104,13 @@ if (isset($_POST['submit'])) {
 		} else echo '<li><b>Skipping</b> line offset change</li>';
 		
 		if ($alt_hash) {
-			echo '<li>Excluding all fields apart from title and content in article hash calculation.</li>';
+			echo '<li>Excluding all fields apart from content in article hash calculation.</li>';
 			fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
-				'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
+				'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
 		} else echo '<li><b>Skipping</b> article hash change: plugin names list is still used to calculate hash.</li>';
 
 		echo '<li>Removing useless files...</li><ul>';
-		foreach(glob('{,*,*/*,*/*/*,*/*/*/*,*/*/*/*/*}/{.empty,.gitignore,*.less,*.map,Makefile}', GLOB_BRACE) as $file) // No spaces after comma between {}!
+		foreach(glob('{,*,*/*,*/*/*,*/*/*/*,*/*/*/*/*}/{.empty,.gitignore,*.less,*.map}', GLOB_BRACE) as $file) // No spaces after comma between {}!
 			remove($file);
 		remove('.editorconfig');
 		remove('.gitignore');

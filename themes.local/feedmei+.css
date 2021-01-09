@@ -61,11 +61,10 @@ div.cdm.expanded {
 	line-height: 1.6;
 }
 
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h4 strong {
+.content h1, .content h1 *,
+.content h2, .content h2 *,
+.content h3, .content h3 *,
+.content h4, .content h4 * {
 	font-family: "PT Sans", sans-serif !important;
 	font-size: 19px !important;
 }

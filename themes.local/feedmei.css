@@ -94,7 +94,7 @@ body.ttrss_main #toolbar-frame #toolbar {
 	padding: 5px 0;
 	font-size: 1.1em;
 }
-	body.ttrss_main #toolbar-frame #toolbar i { margin: -5px 0 0 0 }
+	body.ttrss_main #toolbar-frame #toolbar i { margin: 0 }
 	body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .left i { margin: 0 4px }
 
 body.ttrss_main #feeds-holder #feedTree .counterNode,
