@@ -8,10 +8,15 @@ body:not(.ttrss_prefs) .dijitMenuItem.dijitDisabled .dijitMenuItemLabel,
 body:not(.ttrss_prefs) .dijitProgressBarFull,
 body:not(.ttrss_prefs) .dijitProgressBarLabel,
 .hotkeys-help .hk,
-.content :not(.feed) a { filter: invert(94%) }
+.content :not(.feed) a,
+.Selected .header > :not(.left),
+.hl.Selected { filter: invert(94%) }
 
-.content iframe,
-.content :not(a) > img { filter: invert(100%) }
+.content > img,
+.content > video:not(:fullscreen),
+.content :not(a) > img,
+.content :not(a) > video:not(:fullscreen),
+.content iframe:not(:fullscreen) { filter: invert(100%) !important }
 
 body:not(.ttrss_prefs) span.dijitButton,
 body:not(.ttrss_prefs) .dijitCheckBox,
@@ -26,4 +31,5 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 .active:not(.Unread) .content-inner img,
 .active:not(.Unread) .content-inner iframe { border-color: #111 !important }
 
-div.cdm.expanded div.header a.title { transition: color .2s linear, filter .2s linear }
+div.cdm.expandable div.header a.title,
+div.cdm.expanded div.header a.title { transition: none }
