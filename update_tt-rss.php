@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+<html><head><style>i { color: red }</style></head><body>
 <?php
 /*	A simple script to update Tiny Tiny RSS (upload, extract and clean up).
  *	It takes a master.zip, i.e. a compressed snapshot from the master branch.
  *	Tweaks:
- *	- Adds <g>, <main> and <article> to the allowed elements in articles
+ *	- (Disabled) Adds <g>, <main> and <article> to the allowed elements in articles
  *	- Adds a 19px margin for when scrolling to next/previous article
  *  - Change the way article hashes are calculated:
  *    causes the option "Mark updated articles unread" to be triggered only when
@@ -11,7 +13,7 @@
  *    WARNING: THIS WILL RECALCULATE HASHES AND COULD MARK MANY ARTICLES AS UNREAD
  *  - Modify line_scroll_offset for scrolling with arrow up/down
  *	Removal:
- *	- Removes useless folders: install, tests, feed-icons (moved to cache/feed-icons)
+ *	- Removes useless folders: tests, feed-icons (moved to cache/feed-icons)
  *	- Removes useless files: .empty, .gitignore, *.less, *.map etc.
  *	- Removes all language files, except for those set in $keep_langs / $keep_locale
  *	- Removes plugins, except for those set in $keep_plugins
@@ -31,7 +33,7 @@ $root         = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss'; // folder from
 function remove($path, $key = null, $print = true) {
 	chdir($GLOBALS['root']);
 	if (empty($path) || !file_exists($path)) {
-		echo "<li>$path <b>does not exist</b></li>";
+		echo "<li>$path <i>does not exist</i></li>";
 		return;
 	}
 	$error = false;
@@ -41,7 +43,7 @@ function remove($path, $key = null, $print = true) {
 			$error = is_dir($path);
 	} else if (!unlink($path))
 			$error = true;
-	if ($error) echo "<li>$path <b>could not be deleted</b></li>";
+	if ($error) echo "<li>$path <i>could not be deleted</i></li>";
 	else if ($print) echo "<li>$path</li>";
 }
 
@@ -57,9 +59,9 @@ function fart($file, $find, $replace) {
 	$contents = file_get_contents($file);
 	$newcontents = str_replace($find, $replace, $contents);
 	if ($newcontents == $contents)
-		echo ' - <b>FAILED: No changes made.</b>';
+		echo ' - <i>FAILED: No changes made.</i>';
 	else if (!file_put_contents($file, $newcontents))
-		echo ' - <b>FAILED: Could not save changes.</b>';
+		echo ' - <i>FAILED: Could not save changes.</i>';
 }
 
 if (isset($_POST['submit'])) {
@@ -93,8 +95,8 @@ if (isset($_POST['submit'])) {
 
 //		echo '<li>Unlinking .less source mapping in light.css</li>';
 //		fart('themes/light.css', '/*# sourceMappingURL=light.css.map */', '');
-		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
-		fart('include/functions.php', '$allowed_elements = array(', '/* Changed by tt-rss updater script */ $allowed_elements = array(\'g\', \'main\', \'article\', ');
+//		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
+//		fart('include/functions.php', '$allowed_elements = array(', '/* Changed by tt-rss updater script */ $allowed_elements = array(\'g\', \'main\', \'article\', ');
 		echo '<li>Adding margin for scrolling to articles</li>';
 		fart('js/Article.js', 'ctr.scrollTop = row.offsetTop;', '/* Changed by tt-rss updater script */ ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0);');
 
@@ -118,7 +120,7 @@ if (isset($_POST['submit'])) {
 		remove('COPYING');
 		remove('README.md');
 		remove('feed-icons');
-		remove('install');
+//		remove('install');
 		remove('utils');
 
 		if (is_array($keep_langs)) {
@@ -148,14 +150,9 @@ if (isset($_POST['submit'])) {
 	exit;
 }
 ?>
-<!DOCTYPE html>
-<html>
-	<body>
-		<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
-			<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
-			<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
-			<?php if (!empty($password)): ?><p>Enter password: <input type='password' name='password' autofocus></p><?php endif ?>
-			<p><input type='submit' value='Submit' name='submit' onclick="this.value='Please wait...'"></p>
-		</form>
-	</body>
-</html>
+<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
+	<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
+	<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
+	<?php if (!empty($password)): ?><p>Enter password: <input type='password' name='password' autofocus></p><?php endif ?>
+	<p><input type='submit' value='Submit' name='submit' onclick="this.style.opacity=0"></p>
+</form></body></html>
