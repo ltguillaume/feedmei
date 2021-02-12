@@ -24,7 +24,7 @@ o | Reverse order
 p | Toggle published
 r | Refresh feed
 s | Toggle star
-u | Toggle unread
+u | Mark (un)read
 x | Close article
 g a\|f\|n\|p\|r\|s\|t | Go to All\|Fresh\|Night mode\|Published\|Read\|Starred\|Tags
 
