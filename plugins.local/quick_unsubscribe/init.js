@@ -3,7 +3,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 		PluginHost.register(PluginHost.HOOK_INIT_COMPLETE, () => {
 
 			App.getInitParam("hotkeys")[1]["M"] = "mark_all_read";
-			App.getInitParam("hotkeys")[1]["u"] = "unsubscribe";
+			App.getInitParam("hotkeys")[1]["U"] = "unsubscribe";
 
 			App.hotkey_actions["mark_all_read"]   = function () {
 				const rv = dijit.byId("feedTree").getNextFeed(
