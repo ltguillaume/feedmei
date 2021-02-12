@@ -16,7 +16,7 @@ class Minimal_Hotkeys extends Plugin {
 			s: Toggle star,
 			u: Mark (un)read,
 			x: Close article,
-			g a|f|n|p|r|s|t: Go to All|Fresh|Night mode|Published|Read|Starred|Tags
+			g a|f|n|p|r|s: Go to All|Fresh|Night mode|Published|Read|Starred
 			", "ltGuillaume");
 	}
 
@@ -46,7 +46,6 @@ class Minimal_Hotkeys extends Plugin {
 		$hotkeys["g p"] = "goto_published";
 		$hotkeys["g r"] = "goto_read";
 		$hotkeys["g s"] = "goto_marked";
-		$hotkeys["g t"] = "goto_tagcloud";
 
 		return $hotkeys;
 	}
