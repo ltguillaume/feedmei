@@ -27,7 +27,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 				id = (id.length > 0 ? id[id.length - 1] : 0);
 
 				if (id) {
-					$("RROW-"+ id).removeClassName("Selected");
+					App.byId("RROW-"+ id).removeClassName("Selected");
 
 					if (key == "up" && id == Article.getActive())
 						return App.hotkey_actions["article_scroll_up"]();
@@ -37,12 +37,13 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 
 					if (key == "left") {
 						if (id == Article.getActive()) {
-							$("RROW-"+ id).removeClassName("active").addClassName("Selected")
+							App.byId("RROW-"+ id).removeClassName("active");
+							App.byId("RROW-"+ id).addClassName("Selected");
 							App.isCombinedMode() ? Article.cdmMoveToId(id) : false;
-							return $("headlines-frame").focus();
+							return App.byId("headlines-frame").focus();
 						} else {
 							id = hl[0];
-							$("RROW-"+ id).addClassName("Selected");
+							App.byId("RROW-"+ id).addClassName("Selected");
 							return App.isCombinedMode() ? Article.cdmMoveToId(id) : Headlines.scrollToArticleId(id);
 						}
 					}
@@ -51,7 +52,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 						if (id == Article.getActive())
 							return App.hotkey_actions["next_article_noscroll"]();
 						else {
-							$("RROW-"+ id).removeClassName("Selected");
+							App.byId("RROW-"+ id).removeClassName("Selected");
 							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmMoveToId(id)) : Article.view(id, false);
 						}
 					}
@@ -63,7 +64,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 							return App.isCombinedMode() ? (Article.setActive(id), Article.cdmMoveToId(id)) : Article.view(id, false);
 					}
 
-					$("RROW-"+ id).removeClassName("Selected");
+					App.byId("RROW-"+ id).removeClassName("Selected");
 					if (App.isCombinedMode()) Article.cdmUnsetActive();
 				} else if (key == "right")
 					return App.hotkey_actions["next_article_noscroll"]();
@@ -74,7 +75,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 				else
 					id = (index < hl.length - 1 ? hl[index + 1] : hl[0]);
 
-				var row = $("RROW-"+ id);
+				var row = App.byId("RROW-"+ id);
 				if (row) row.addClassName("Selected");
 
 				App.getInitParam("cdm_expanded") ? Article.cdmMoveToId(id) : Headlines.scrollToArticleId(id);
