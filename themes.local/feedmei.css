@@ -34,7 +34,6 @@
 .dijitTreeIcon img,
 #dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
 #fox_form_ComboButton_0 .dijitReset.dijitButtonContents,
-.dijitReset.dijitStretch.dijitButtonContents.dijitDownArrowButton,
 .ttrss_prefs :not(#notify) > i.material-icons { margin-top: -6px }
 
 .dijitButtonContents i.material-icons,
@@ -54,6 +53,8 @@ i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
 .dijitTreeExpando,
 .dijitButton .dijitButtonText { margin-top: -4px }
+
+.flat .dijitToolbar .dijitDropDownButton .dijitArrowButtonInner { margin-top: 2px }
 
 body.ttrss_main div.whiteBox p,
 body.ttrss_main div.post div.header .row { margin-bottom: 0 }
@@ -100,12 +101,17 @@ body.ttrss_main #headlines-spacer {
 	padding-bottom: 1em;
 }
 
-body.ttrss_main #toolbar-frame #toolbar {
+body.ttrss_main #toolbar-frame #toolbar,
+body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines {
 	padding: 5px 0;
-	font-size: 1.1em;
+	font-size: 14px;
 }
 	body.ttrss_main #toolbar-frame #toolbar i { margin: 0 }
 	body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .left i { margin: 0 4px }
+	body.ttrss_main #toolbar-frame #toolbar i.log-alert {
+		margin: 0 4px;
+		font-size: 19px;
+	}
 
 body.ttrss_main #feeds-holder #feedTree .counterNode,
 body.ttrss_main #toolbar-headlines #feed_current_unread {
@@ -142,6 +148,8 @@ body.ttrss_main #overlay_inner {
 	padding-right: 4px;
 }
 
+.flat .dijitSelect .dijitInputField { padding: 0 0 0 6px }
+
 .flat .dijitTextBoxHover,
 .flat .dijitTextBoxFocused,
 body.ttrss_main div#cmdline { border-color: #ccc }
@@ -164,8 +172,9 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 	background: transparent !important;
 }
 
-#toolbar #dijit_form_ComboButton_0_button,
-#toolbar #fox_form_ComboButton_0_button { margin: -6px -10px 0 2px }
+#toolbar #fox_form_ComboButton_0_button { margin: -5px -11px 0 2px }	/* Mark as read */
+#toolbar #fox_form_DropDownButton_0 { margin-top: -8px } /* Menu */
+#toolbar #fox_form_DropDownButton_1 { margin-top: -4px }	/* Select */
 
 #notify,
 #floatingTitle .feed a,
@@ -279,7 +288,7 @@ body.ttrss_main .hl.active .hl-content a.title { color: #444 }
 
 .header .title a,
 #toolbar-frame #toolbar,
-#toolbar-frame #toolbar #feed_title a,
+#toolbar-frame #toolbar a,
 body.ttrss_main #toolbar-frame #toolbar #selected_prompt,
 div.cdm.expanded.Unread div.header a.title,
 div.cdm.expanded.Unread div.content,
