@@ -46,6 +46,8 @@
 .ttrss_prefs .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 
+.left .dijitCheckBox { margin: 4px 2px }
+
 i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 
 #feedTree .dijitTreeExpandoClosed,
