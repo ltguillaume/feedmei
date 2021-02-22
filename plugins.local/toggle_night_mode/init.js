@@ -7,7 +7,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			};
 
 			App.toggleNightMode = function () {
-				const link = $("theme_css");
+				const link = App.byId("theme_css");
 				if (!link) return;
 
 				let user_css = false;
@@ -33,16 +33,19 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 					else
 						userCSS("themes/night.css");
 
-				if (user_css)
-					$("main").fade({duration: .4, afterFinish: () => {
+				if (user_css) {
+					App.byId("main").fadeOut();
+					setTimeout(() => {
 						link.setAttribute("href", user_css);
- 						$("main").appear({duration: .8});
- 						xhrPost("backend.php", {
+						xhrPost("backend.php", {
 							op: "rpc",
 							method: "setpref",
 							key: "USER_CSS_THEME",
-							value: user_css.split("/")[1] });
-					}});
+							value: user_css.split("/")[1]
+						});
+						setTimeout(() => { App.byId("main").fadeIn() }, 200);
+					}, 300);
+				}
 			};
 
 		});

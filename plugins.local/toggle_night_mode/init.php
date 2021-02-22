@@ -4,7 +4,7 @@ class Toggle_Night_Mode extends Plugin {
 	private $host;
 
 	function about() {
-		return array(2.1,
+		return array(2.2,
 			"Allow night mode toggle with [a N] for custom themes (use yourtheme_night.css as filename)",
 			"ltGuillaume");
 	}
