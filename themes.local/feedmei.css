@@ -111,8 +111,8 @@ body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines {
 	body.ttrss_main #toolbar-frame #toolbar i { margin: 0 }
 	body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .left i { margin: 0 2px 0 5px }
 	body.ttrss_main #toolbar-frame #toolbar i.log-alert {
-		margin: 0 4px;
-		font-size: 19px;
+		margin: 0 2px 0 5px;
+		font-size: 20px;
 	}
 
 body.ttrss_main #feeds-holder #feedTree .counterNode,
