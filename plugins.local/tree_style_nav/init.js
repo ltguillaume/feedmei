@@ -12,14 +12,14 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 			App.getInitParam("hotkeys")[1]["(45)"]  = "toggle_unread";
 			App.getInitParam("hotkeys")[1]["0"]     = "toggle_unread";
 
-			App.hotkey_actions["cursor_up"]    = function () { Article.keyboardCursor("up") };
-			App.hotkey_actions["cursor_down"]  = function () { Article.keyboardCursor("down") };
-			App.hotkey_actions["cursor_left"]  = function () { Article.keyboardCursor("left") };
-			App.hotkey_actions["cursor_right"] = function () { Article.keyboardCursor("right") };
-			App.hotkey_actions["cursor_enter"] = function () { Article.keyboardCursor("enter") };
+			App.hotkey_actions["cursor_up"]    = function () { Article.treeStyleNav("up") };
+			App.hotkey_actions["cursor_down"]  = function () { Article.treeStyleNav("down") };
+			App.hotkey_actions["cursor_left"]  = function () { Article.treeStyleNav("left") };
+			App.hotkey_actions["cursor_right"] = function () { Article.treeStyleNav("right") };
+			App.hotkey_actions["cursor_enter"] = function () { Article.treeStyleNav("enter") };
 			App.hotkey_actions["cursor_prev_article_noscroll"] = function () { Headlines.move("prev", {force_previous: true}) };
 
-			Article.keyboardCursor = function (key) {
+			Article.treeStyleNav = function (key) {
 				var hl = Headlines.getLoaded();
 				if (hl.length == 0) return;
 

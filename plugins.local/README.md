@@ -1,4 +1,4 @@
-### keyboard_cursor
+### tree_style_nav
 Use cursor keys for a tree-style article navigation. This makes browsing through your articles a lot faster. Forces the following hotkeys:
 
 Hotkey | Command | Command with opened article

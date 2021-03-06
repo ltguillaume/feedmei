@@ -1,5 +1,5 @@
 <?php
-class Keyboard_Cursor extends Plugin {
+class Tree_Style_Nav extends Plugin {
 
 	private $host;
 
