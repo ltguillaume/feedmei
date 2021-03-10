@@ -118,13 +118,14 @@ body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines {
 body.ttrss_main #feeds-holder #feedTree .counterNode,
 body.ttrss_main #toolbar-headlines #feed_current_unread {
 	margin-top: 1px;
-	background: #ddd !important;
+	background: #ddd;
 	padding: .2em;
 	font-size: 10.5px;
 	font-weight: bold;
 	color: #777;
 	border: 0;
 }
+	body.ttrss_main #feeds-holder #feedTree .counterNode.unread { background: #ddd !important }
 
 body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
 	font-weight: normal;
