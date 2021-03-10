@@ -174,9 +174,9 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 	background: transparent !important;
 }
 
+#toolbar .dijitButtonContents.dijitDownArrowButton { margin-top: -4px }	/* Select */
 #toolbar #fox_form_ComboButton_0_button { margin: -5px -11px 0 2px }	/* Mark as read */
 #toolbar #fox_form_DropDownButton_0 { margin-top: -8px } /* Menu */
-#toolbar #fox_form_DropDownButton_1 { margin-top: -4px }	/* Select */
 
 #notify,
 #floatingTitle .feed a,
