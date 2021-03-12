@@ -16,13 +16,13 @@
 }
 
 /* Optimize legibility by maximum text width */
-div.cdm.expanded {
+#headlines-frame:not([data-enable-grid="true"]) div.cdm.expanded {
 	width: calc(100% - 72px);
 	max-width: 960px;
 	margin: 21px auto;
 }
 
-.content {
+#headlines-frame:not([data-enable-grid="true"]) .content {
 	max-width: 50em;
 	margin: 0 auto;
 }

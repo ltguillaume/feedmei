@@ -240,7 +240,8 @@ body.ttrss_main .hl,
 body.ttrss_main .hl.Unread,
 .cdm.expandable,
 .cdm.expandable.Unread,
-.cdm.expandable.active { background: #fefefe !important }
+.cdm.expandable.active,
+#headlines-frame[data-enable-grid="true"] .cdm.expanded > * { background: #fefefe !important }
 
 body.ttrss_main .hl.active { background: #f5f5f5 !important }
 
@@ -252,12 +253,14 @@ body.ttrss_main #headlines-frame div.feed-title {
 
 div.cdm { transition: all .1s linear }
 
-div.cdm.expanded {
+#headlines-frame:not([data-enable-grid="true"]) div.cdm.expanded {
 	margin: 1.5em;
 	padding: 1em;
 	color: #555;
 	border: 1px solid #eee;
 }
+
+#headlines-frame[data-enable-grid="true"] > * { margin: .2em }
 
 div.cdm .header[stuck] { opacity: 1 !important }
 	div.cdm.expandable:not(.active) .header[stuck] { border-bottom-width: 0 }
@@ -271,18 +274,20 @@ div.cdm .header[stuck] { opacity: 1 !important }
 #content-insert,
 div.cdm.expandable.Selected,
 body.ttrss_main .hl.Selected,
-div.cdm.expanded.active:not(.Unread),
-div.cdm.expandable.active:not(.Unread) {
+#headlines-frame:not([data-enable-grid="true"]) div.cdm.expanded.active:not(.Unread),
+#headlines-frame:not([data-enable-grid="true"]) div.cdm.expandable.active:not(.Unread),
+#headlines-frame[data-enable-grid="true"] .cdm.expanded.active > * {
 	background: #f9f9f9 !important;
 	color: #444;
 }
-	div.cdm.expanded.active:not(.Unread) { border: 1px solid #ddd }
+	#headlines-frame:not([data-enable-grid="true"]) div.cdm.expanded.active:not(.Unread) { border: 1px solid #ddd }
 
 .header .row a,
 #toolbar .dijitOpened *,
 #content-insert div.content,
 div.cdm.active div.content,
 div.cdm.expanded.active div.header a.title,
+div.cdm.expanded.active .content,
 div.cdm.expandable.active div.header a.title,
 div.cdm.expandable.Selected:not(.active) a,
 body.ttrss_main .hl.active :not(i),
@@ -306,7 +311,8 @@ body.ttrss_main .hl div.title a,
 div.cdm.active.Unread div.content,
 div.cdm.expanded div.header a.title,
 div.cdm.expanded.Unread.active div.header a.title,
-div.cdm.expandable.Unread.active div.header a.title { color: #777 }
+div.cdm.expandable.Unread.active div.header a.title,
+#headlines-frame[data-enable-grid="true"] .cdm.expanded.active.Unread > * { color: #777 }
 
 div.cdm.expandable div.header a.title,
 body.ttrss_main .hl:not(.Unread) .hl-content a.title,
