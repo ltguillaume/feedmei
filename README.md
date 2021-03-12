@@ -42,9 +42,9 @@ div.cdm.expanded {
 ### Align article top
 In combined mode, put some space between the article and the header when jumping to previous/next article with hotkeys. In `rss/js/Article.js` replace:
 ```
-ctr.scrollTop = row.offsetTop;
+ctr.scrollTop = row.offsetTop
 ```
 with
 ```
-ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0);
+ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0)
 ```

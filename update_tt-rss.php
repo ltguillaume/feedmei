@@ -17,7 +17,7 @@
  *	- Removes useless files: .empty, .gitignore, *.less, *.map etc.
  *	- Removes all language files, except for those set in $keep_langs / $keep_locale
  *	- Removes plugins, except for those set in $keep_plugins
- *	- Unlinks light.css.less mapping in light.css (prevents console error)
+ *	- (Disabled) Unlinks light.css.less mapping in light.css (prevents console error)
  */
 
 $password     = ''; // sha256 hash
@@ -70,14 +70,14 @@ if (isset($_POST['submit'])) {
 		die('Password incorrect');
 	if (isset($_POST['download'])) {
 		echo '<li>Downloading latest commit from master branch...</li>';
-		$target_file = '_tt-rss-master.zip';
+		$target_file = '_tt-rss-update.zip';
 		$master = fopen('https://git.tt-rss.org/fox/tt-rss/archive/master.zip', 'r');
 		if (!file_put_contents($target_file, $master))
 			die('Download failed');
 	} else {
 		if (empty($_FILES['zip']['name'])) die('No file uploaded');
 		echo '<li>Uploaded to temp file <b>'. $_FILES['zip']['tmp_name'] .'</b></li>';
-		$target_file = basename($_FILES['zip']['name']);
+		$target_file = '_'. basename($_FILES['zip']['name']);
 		if (move_uploaded_file($_FILES['zip']['tmp_name'], $target_file))
 			echo '<li>File <b>'. $target_file .'</b> has been uploaded</li>';
 		else die('Error while moving upload to '. $target_file);
@@ -97,8 +97,9 @@ if (isset($_POST['submit'])) {
 //		fart('themes/light.css', '/*# sourceMappingURL=light.css.map */', '');
 //		echo '<li>Adding &lt;g&gt;, &lt;main&gt; and &lt;article&gt; to allowed elements for TorrentFreak and New Scientist articles</li>';
 //		fart('include/functions.php', '$allowed_elements = array(', '/* Changed by tt-rss updater script */ $allowed_elements = array(\'g\', \'main\', \'article\', ');
+
 		echo '<li>Adding margin for scrolling to articles</li>';
-		fart('js/Article.js', 'ctr.scrollTop = row.offsetTop;', '/* Changed by tt-rss updater script */ ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0);');
+		fart('js/Article.js', 'ctr.scrollTop = row.offsetTop', '/* Changed by tt-rss updater script */ ctr.scrollTop = row.offsetTop - (App.getInitParam("cdm_expanded") ? 18 : 0)');
 
 		if ($line_offset) {
 			echo '<li>Changing line offset for scrolling with cursor keys to '. $line_offset .'px</li>';
@@ -119,8 +120,8 @@ if (isset($_POST['submit'])) {
 		remove('CONTRIBUTING.md');
 		remove('COPYING');
 		remove('README.md');
+		remove('config.php-dist');
 		remove('feed-icons');
-//		remove('install');
 		remove('utils');
 
 		if (is_array($keep_langs)) {
