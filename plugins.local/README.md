@@ -24,9 +24,10 @@ o | Reverse order
 p | Toggle published
 r | Refresh feed
 s | Toggle star
-u | Mark (un)read
+u | Toggle unread
 x | Close article
-g a\|f\|n\|p\|r\|s | Go to All\|Fresh\|Night mode\|Published\|Read\|Starred
+g a\|f\|n\|p\|r\|s\|t | Go to All\|Fresh\|Night mode\|Published\|Read\|Starred\|Tags
+v c\|e\|g\|w | Toggle Combined\|Expanded\|Grid View\|Widescreen view mode
 
 ### quick_unsubscribe
 Speed up your cleaning rage with these hotkeys. Hotkeys to speed up the process of going through many feeds and quickly unsubscribe or mark all articles as read.

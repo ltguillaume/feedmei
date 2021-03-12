@@ -4,7 +4,7 @@ class Minimal_Hotkeys extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.4, "
+		return array(1.5, "
 			[ / ]: Feed prev/next,
 			Left/right: Article prev/next,
 			Up/down: Scroll,
@@ -14,9 +14,10 @@ class Minimal_Hotkeys extends Plugin {
 			p: Toggle published,
 			r: Refresh feed,
 			s: Toggle star,
-			u: Mark (un)read,
+			u: Toggle unread,
 			x: Close article,
-			g a|f|n|p|r|s: Go to All|Fresh|Night mode|Published|Read|Starred
+			g a|f|n|p|r|s|t: Go to All|Fresh|Night mode|Published|Read|Starred|Tags,
+			v c|e|g|w: Toggle Combined|Expanded|Grid View|Widescreen view mode
 			", "ltGuillaume");
 	}
 
@@ -46,6 +47,11 @@ class Minimal_Hotkeys extends Plugin {
 		$hotkeys["g p"] = "goto_published";
 		$hotkeys["g r"] = "goto_read";
 		$hotkeys["g s"] = "goto_marked";
+		$hotkeys["g t"] = "goto_tagcloud";
+		$hotkeys["v c"] = "toggle_combined_mode";
+		$hotkeys["v e"] = "toggle_cdm_expanded";
+		$hotkeys["v g"] = "feed_toggle_grid";
+		$hotkeys["v w"] = "toggle_widescreen";
 
 		return $hotkeys;
 	}
