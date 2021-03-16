@@ -115,22 +115,20 @@ body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines {
 		font-size: 20px;
 	}
 
-body.ttrss_main #feeds-holder #feedTree .counterNode,
-body.ttrss_main #toolbar-headlines #feed_current_unread {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode,
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode.aux {
 	margin-top: 1px;
-	background: #ddd;
 	padding: .2em;
 	font-size: 10.5px;
-	font-weight: bold;
-	color: #777;
-	border: 0;
-}
-	body.ttrss_main #feeds-holder #feedTree .counterNode.unread { background: #ddd !important }
-
-body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
 	font-weight: normal;
 	color: #999;
+	border: 0;
 }
+	body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode.unread {
+		background: #ddd !important;
+		font-weight: bold;
+		color: #777;
+	}
 
 body.ttrss_main #overlay_inner {
 	width: 300px;
