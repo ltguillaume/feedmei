@@ -37,7 +37,7 @@
 .ttrss_prefs :not(#notify) > i.material-icons { margin-top: -6px }
 
 .dijitButtonContents i.material-icons,
-.loadingNode,
+.dijitTreeRow.Is_Cat .loadingNode,
 .feed-title img,
 .feed-title i.material-icons,
 #feed_title i.material-icons,
@@ -54,7 +54,8 @@ i.material-icons.icon-restore { margin: -5px 0 0 -1px }
 #feedTree .dijitTreeExpandoOpened { margin: -4px -1px 0 24px }
 
 .dijitTreeExpando,
-.dijitButton .dijitButtonText { margin-top: -4px }
+.dijitButton .dijitButtonText,
+.dijitTreeRow.Is_Feed .loadingNode { margin-top: -4px }
 
 .flat .dijitToolbar .dijitDropDownButton .dijitArrowButtonInner { margin-top: 2px }
 
@@ -184,6 +185,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 #headlines-frame .hl .feed,
 #headlines-frame .dijitCheckBox,
 #headlines-frame .icon,
+.loadingNode,
 .feed-icon img,
 .feed-title img,
 .header img { filter: grayscale(100%) opacity(75%) !important }
