@@ -202,7 +202,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 
 .marked .marked-pic { filter: grayscale(100%) brightness(60%) }
 
-body.ttrss_main i.icon-syndicate {
+body.ttrss_main #toolbar-headlines i.icon-syndicate {
 	margin-top: -4px;
 	color: #909090;
 	border-color: #909090;
