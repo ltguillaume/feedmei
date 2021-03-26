@@ -25,7 +25,10 @@
 		filter: grayscale(100%);
 	}
 
-.header .collapse i.material-icons { margin-top: -10px }
+.header .collapse i.material-icons {
+	margin-top: -4px;
+	font-size: 14px;
+}
 
 #floatingTitle .collapse i.material-icons,
 #floatingTitle .right img,
@@ -48,10 +51,8 @@
 
 .left .dijitCheckBox { margin: 4px 2px }
 
-i.material-icons.icon-restore { margin: -5px 0 0 -1px }
-
 #feedTree .dijitTreeExpandoClosed,
-#feedTree .dijitTreeExpandoOpened { margin: -4px -1px 0 24px }
+#feedTree .dijitTreeExpandoOpened { margin: 0 0 0 24px }
 
 .dijitTreeExpando,
 .dijitButton .dijitButtonText,
@@ -202,11 +203,15 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 
 .marked .marked-pic { filter: grayscale(100%) brightness(60%) }
 
+.cdm.expandable.active .collapse i.material-icons,
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow i.icon.icon-restore,
+body.ttrss_main #headlines-frame .feed-title a i,
 body.ttrss_main #toolbar-headlines i.icon-syndicate {
 	margin-top: -4px;
 	color: #909090;
 	border-color: #909090;
 }
+	i.material-icons.icon-restore { margin-left: -1px }
 
 .flat .dijitContentPane { background: #fefefe }
 
