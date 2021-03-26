@@ -294,6 +294,7 @@ body.ttrss_main .hl.active :not(i),
 body.ttrss_main .hl.active .feed a,
 body.ttrss_main .hl.active .hl-content a.title { color: #444 }
 
+body.ttrss_main a,
 .header .title a,
 #toolbar-frame #toolbar,
 #toolbar-frame #toolbar a,
