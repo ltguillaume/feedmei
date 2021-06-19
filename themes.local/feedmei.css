@@ -30,33 +30,22 @@
 	font-size: 14px;
 }
 
-#floatingTitle .collapse i.material-icons,
-#floatingTitle .right img,
-.header .right img,
-.dijitTreeIcon i.material-icons,
-.dijitTreeIcon img,
-#dijit_form_ComboButton_0 .dijitReset.dijitButtonContents,
-#fox_form_ComboButton_0 .dijitReset.dijitButtonContents,
+.dijitButtonContents i.material-icons,
+.ttrss_prefs .dijitTreeExpando,
 .ttrss_prefs :not(#notify) > i.material-icons { margin-top: -6px }
 
-.dijitButtonContents i.material-icons,
-.dijitTreeRow.Is_Cat .loadingNode,
-.feed-title img,
-.feed-title i.material-icons,
-#feed_title i.material-icons,
 .footer .left i.material-icons,
 .dijitTabPaneWrapper .dijitCheckBox,
+.dijitTabPaneWrapper .dijitTextBox,
 .ttrss_prefs .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 
+.dijitButton .dijitButtonText { margin-top: -4px }
+
 .left .dijitCheckBox { margin: 4px 2px }
 
-#feedTree .dijitTreeExpandoClosed,
-#feedTree .dijitTreeExpandoOpened { margin: 0 0 0 24px }
-
-.dijitTreeExpando,
-.dijitButton .dijitButtonText,
-.dijitTreeRow.Is_Feed .loadingNode { margin-top: -4px }
+body:not(.ttrss_prefs) #feedTree .dijitTreeExpandoClosed,
+body:not(.ttrss_prefs) #feedTree .dijitTreeExpandoOpened { margin-right: -2px }
 
 .flat .dijitToolbar .dijitDropDownButton .dijitArrowButtonInner { margin-top: 2px }
 
@@ -65,7 +54,7 @@ body.ttrss_main div.post div.header .row { margin-bottom: 0 }
 
 #content-insert .header i { margin-top: 1px }
 
-#feedTree .dijitTreeRow { margin-left: -18px }
+#feedTree .dijitTreeRow:not(.Is_Cat) { margin-left: -18px }
 
 .buttons.right { margin-right: -4px }
 
