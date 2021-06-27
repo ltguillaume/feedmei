@@ -115,10 +115,12 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNod
 	color: #999;
 	border: 0;
 }
+	body.ttrss_main #toolbar-headlines #feed_current_unread,
 	body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode.unread {
 		background: #ddd !important;
 		font-weight: bold;
 		color: #777;
+		border: 0;
 	}
 
 body.ttrss_main #overlay_inner {
