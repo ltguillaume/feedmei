@@ -197,8 +197,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 
 .cdm.expandable.active .collapse i.material-icons,
 body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow i.icon.icon-restore,
-body.ttrss_main #headlines-frame .feed-title a i,
-body.ttrss_main #toolbar-headlines i.icon-syndicate {
+body.ttrss_main #headlines-frame .feed-title a i {
 	margin-top: -4px;
 	color: #909090;
 	border-color: #909090;
