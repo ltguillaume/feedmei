@@ -1,10 +1,8 @@
 <?php
 class Minimal_Hotkeys extends Plugin {
 
-	private $host;
-
 	function about() {
-		return array(1.5, "
+		return array(1.6, "
 			[ / ]: Feed prev/next,
 			Left/right: Article prev/next,
 			Up/down: Scroll,
@@ -22,11 +20,11 @@ class Minimal_Hotkeys extends Plugin {
 	}
 
 	function init($host) {
-		$this->host = $host;
 		$host->add_hook($host::HOOK_HOTKEY_MAP, $this);
 	}
 
-	function hook_hotkey_map() {
+	function hook_hotkey_map($hotkeys) {
+		unset($hotkeys);
 		$hotkeys["["] = "prev_feed";
 		$hotkeys["]"] = "next_feed";
 		$hotkeys["(37)|Left"] = "prev_article_noscroll";

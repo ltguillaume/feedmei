@@ -1,8 +1,6 @@
 <?php
 class Tree_Style_Nav extends Plugin {
 
-	private $host;
-
 	function about() {
 		return array(2.1, "
 			Use cursor keys for tree-style article navigation.

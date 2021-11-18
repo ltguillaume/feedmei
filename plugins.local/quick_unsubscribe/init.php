@@ -1,8 +1,6 @@
 <?php
 class Quick_Unsubscribe extends Plugin {
 
-	private $host;
-
 	function about() {
 		return array(1.2, "
 			Speed up your cleaning rage with these hotkeys.
