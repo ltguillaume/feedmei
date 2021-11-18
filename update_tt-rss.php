@@ -58,10 +58,14 @@ function fart($file, $find, $replace) {
 	chdir($GLOBALS['root']);
 	$contents = file_get_contents($file);
 	$newcontents = str_replace($find, $replace, $contents);
-	if ($newcontents == $contents)
+	if ($newcontents == $contents) {
 		echo ' - <i>FAILED: No changes made.</i>';
-	else if (!file_put_contents($file, $newcontents))
+		return false;
+	} else if (!file_put_contents($file, $newcontents)) {
 		echo ' - <i>FAILED: Could not save changes.</i>';
+		return false;
+	}
+	return true;
 }
 
 if (isset($_POST['submit'])) {
@@ -108,8 +112,10 @@ if (isset($_POST['submit'])) {
 		
 		if ($alt_hash) {
 			echo '<li>Excluding all fields apart from title and content in article hash calculation.</li>';
-			fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
-				'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
+			if (!fart('classes/rssutils.php', 'calculate_article_hash(array $article, PluginHost $pluginhost): string {',
+					'calculate_article_hash(array $article, PluginHost $pluginhost): string { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));'))
+				fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
+					'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
 		} else echo '<li><b>Skipping</b> article hash change: plugin names list is still used to calculate hash.</li>';
 
 		echo '<li>Removing useless files...</li><ul>';
