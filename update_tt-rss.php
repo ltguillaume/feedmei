@@ -43,6 +43,7 @@ function remove($path, $key = null, $print = true) {
 			$error = is_dir($path);
 	} else if (!unlink($path))
 			$error = true;
+	$GLOBALS['abort'] = $error;
 	if ($error) echo "<li>$path <i>could not be deleted</i></li>";
 	else if ($print) echo "<li>$path</li>";
 }
@@ -90,6 +91,7 @@ if (isset($_POST['submit'])) {
 	$zip = new ZipArchive;
 	$res = $zip->open($target_file);
 	if ($res === true) {
+		print_r(shell_exec('rm -r '. $GLOBALS['root']));
 		$zip->extractTo($target_path);
 		$zip->close();
 		unlink($target_file);
@@ -114,8 +116,9 @@ if (isset($_POST['submit'])) {
 			echo '<li>Excluding all fields apart from title and content in article hash calculation.</li>';
 			if (!fart('classes/rssutils.php', 'calculate_article_hash(array $article, PluginHost $pluginhost): string {',
 					'calculate_article_hash(array $article, PluginHost $pluginhost): string { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));'))
-				fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
-					'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));');
+				if(!fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
+					'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));'))
+						$GLOBALS['abort'] = true;
 		} else echo '<li><b>Skipping</b> article hash change: plugin names list is still used to calculate hash.</li>';
 
 		echo '<li>Removing useless files...</li><ul>';
@@ -148,6 +151,7 @@ if (isset($_POST['submit'])) {
 			clean('plugins', $keep_plugins);
 		} else echo '<li><b>Skipping</b> plugins removal</li>';
 
+		if ($GLOBALS['abort']) die ('<i>Aborting because of error<i>');
 		echo '</ul><li>Moving files into place...</li><ul>';
 		print_r(shell_exec('cp -Rf '. $GLOBALS['root'] .'/* '. pathinfo(__FILE__, PATHINFO_DIRNAME) .'/'));
 		print_r(shell_exec('rm -r '. $GLOBALS['root']));
