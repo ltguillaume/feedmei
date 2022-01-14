@@ -174,7 +174,7 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Error .dijitTreeLabel { co
 #notify,
 #floatingTitle .feed a,
 #floatingTitle img.icon,
-.header .feed a,
+.header a.feed,
 #headlines-frame .hl .feed,
 #headlines-frame .dijitCheckBox,
 #headlines-frame .icon,
