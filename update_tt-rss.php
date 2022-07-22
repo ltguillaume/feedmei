@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
 	if (isset($_POST['download'])) {
 		echo '<li>Downloading latest commit from master branch...</li>';
 		$target_file = '_tt-rss-update.zip';
-		$master = fopen('https://git.tt-rss.org/fox/tt-rss/archive/master.zip', 'r');
+		$master = fopen('https://dev.tt-rss.org/fox/tt-rss/archive/master.zip', 'r');
 		if (!file_put_contents($target_file, $master))
 			die('Download failed');
 	} else {
