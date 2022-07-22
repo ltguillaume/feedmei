@@ -3,11 +3,14 @@ require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
 		this.prev_feed = null;
 
 		function setOrder(feed, isCat) {
-			console.log('unread_oldest_first: setOrder(['+ feed +', '+ isCat +']) | Unread = '+ Feeds.getUnread(feed, isCat));
-			if (document.forms["toolbar-main"].view_mode.value == 'adaptive') {
-				let order = Feeds.getUnread(feed, isCat) > 0 ? 'date_reverse' : 'default';
-				if (order != document.forms["toolbar-main"].order_by.value)
-					dijit.getEnclosingWidget(document.forms["toolbar-main"].order_by).attr('value', order);
+			console.log('unread_oldest_first: triggered setOrder(['+ feed +', '+ isCat +']) | Unread = '+ Feeds.getUnread(feed, isCat));
+			const toolbar = dijit.byId("toolbar-main");
+			if (toolbar.getValues().view_mode == 'adaptive') {
+				let order_by = Feeds.getUnread(feed, isCat) > 0 ? 'date_reverse' : 'default';
+				if (order_by != toolbar.getValues().order_by) {
+					console.log('unread_oldest_first: setting order to '+ order_by);
+					toolbar.setValues({order_by: order_by});
+				}
 			}
 			this.prev_feed = feed;
 		}
