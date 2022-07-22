@@ -34,7 +34,6 @@
 .ttrss_prefs .dijitTreeExpando,
 .ttrss_prefs :not(#notify) > i.material-icons { margin-top: -6px }
 
-.footer .left i.material-icons,
 .dijitTabPaneWrapper .dijitCheckBox,
 .dijitTabPaneWrapper .dijitTextBox,
 .ttrss_prefs .dijitCheckBox,
@@ -202,6 +201,7 @@ body.ttrss_main #headlines-frame .feed-title a i {
 	color: #909090;
 	border-color: #909090;
 }
+	.cdm.expandable.active .collapse i.material-icons { margin-top: -10px }
 	i.material-icons.icon-restore { margin-left: -1px }
 
 .flat .dijitContentPane { background: #fefefe }
