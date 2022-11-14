@@ -47,6 +47,8 @@
 body:not(.ttrss_prefs) #feedTree .dijitTreeExpandoClosed,
 body:not(.ttrss_prefs) #feedTree .dijitTreeExpandoOpened { margin-right: -2px }
 
+.flat .dijitTree .dijitTreeNode .dijitTreeRow.dijitTreeRowSelected .dijitTreeExpando { color: #257aa7 }
+
 .flat .dijitToolbar .dijitDropDownButton .dijitArrowButtonInner { margin-top: 2px }
 
 body.ttrss_main div.whiteBox p,
