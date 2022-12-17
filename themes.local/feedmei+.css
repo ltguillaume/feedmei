@@ -46,7 +46,7 @@
 }
 
 /* Enable smooth scrolling */
-#headlines-frame, #content-insert { scroll-behavior: smooth }
+/*#headlines-frame, #content-insert { scroll-behavior: smooth }
 
 /* Set custom article fonts */
 .cdm.expanded .header .title,
