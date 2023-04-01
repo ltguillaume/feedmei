@@ -23,12 +23,13 @@
 $password     = ''; // sha256 hash
 // Tweaks
 $alt_hash     = FALSE; // use FALSE to disable changes
-$line_offset  = 240;  // use FALSE to disable changes
+$force_curl   = FALSE; // use FALSE to disable changes
+$line_offset  = 240;   // use FALSE to disable changes
 // Removal
 $keep_langs   = ['en', 'nl']; // use FALSE to disable
 $keep_locale  = ['nl_NL'];    // use FALSE to disable
 $keep_plugins = ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']; // use FALSE to disable
-$root         = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss'; // folder from extracted zip
+$root         = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss-master'; // folder from extracted zip
 
 function remove($path, $key = null, $print = true) {
 	chdir($GLOBALS['root']);
@@ -76,7 +77,7 @@ if (isset($_POST['submit'])) {
 	if (isset($_POST['download'])) {
 		echo '<li>Downloading latest commit from master branch...</li>';
 		$target_file = '_tt-rss-update.zip';
-		$master = fopen('https://dev.tt-rss.org/fox/tt-rss/archive/master.zip', 'r');
+		$master = fopen('https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/master/tt-rss-master.zip', 'r');
 		if (!file_put_contents($target_file, $master))
 			die('Download failed');
 	} else {
@@ -111,7 +112,17 @@ if (isset($_POST['submit'])) {
 			echo '<li>Changing line offset for scrolling with cursor keys to '. $line_offset .'px</li>';
 			fart('js/Headlines.js', 'line_scroll_offset: 120', '/* Changed by tt-rss updater script */ line_scroll_offset: '. $line_offset);
 		} else echo '<li><b>Skipping</b> line offset change</li>';
-		
+
+		if ($force_curl) {
+			echo '<li>Forcing the use of curl</li>';
+			if(!fart('classes/urlhelper.php', ' && !ini_get("open_basedir")) {',
+				') { /* && !ini_get("open_basedir") Removed by tt-rss updater script in order to force the use of curl */'))
+					$GLOBALS['abort'] = true;
+			else
+				fart('classes/rssutils.php', 'not using CURL due to open_basedir restrictions',
+					'forcing the use of curl (tt-rss updater script)');
+		} else echo '<li><b>NOT forcing</b> the use of curl.</li>';
+
 		if ($alt_hash) {
 			echo '<li>Excluding all fields apart from title and content in article hash calculation.</li>';
 			if (!fart('classes/rssutils.php', 'calculate_article_hash(array $article, PluginHost $pluginhost): string {',
@@ -155,7 +166,7 @@ if (isset($_POST['submit'])) {
 		echo '</ul><li>Moving files into place...</li><ul>';
 		print_r(shell_exec('cp -Rf '. $GLOBALS['root'] .'/* '. pathinfo(__FILE__, PATHINFO_DIRNAME) .'/'));
 		print_r(shell_exec('rm -r '. $GLOBALS['root']));
-		
+
 		echo '</ul>Done.';
 	} else die('Could not open file for extraction');
 	exit;
