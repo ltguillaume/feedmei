@@ -19,6 +19,7 @@
 	font-family: "PT Sans" !important;
 	text-rendering: optimizelegibility !important;
 }
+	.loading-indicator,
 	.material-icons { filter: grayscale(100%) }
 	.flat :before {
 		font-family: "flat-icon" !important;
@@ -39,6 +40,7 @@
 .ttrss_prefs .dijitCheckBox,
 .ttrss_prefs #feedConfigTab .dijitTreeIcon img { margin-top: -5px }
 
+.loading-indicator,
 .dijitTreeRow.Is_Cat .loadingNode,
 .dijitButton .dijitButtonText { margin-top: -4px }
 
