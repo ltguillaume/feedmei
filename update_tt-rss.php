@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html><head><style>i { color: red }</style></head><body>
+<html>
+	<head>
+		<style>i { color: red }</style>
+		<title>Tiny Tiny RSS Update & Cleanup Script</title>
+	</head>
+<body>
 <?php
 /*	A simple script to update Tiny Tiny RSS (upload, extract and clean up).
  *	It takes a master.zip, i.e. a compressed snapshot from the master branch.
@@ -115,19 +120,19 @@ if (isset($_POST['submit'])) {
 
 		if ($force_curl) {
 			echo '<li>Forcing the use of curl</li>';
-			if(!fart('classes/urlhelper.php', ' && !ini_get("open_basedir")) {',
+			if(!fart('classes/UrlHelper.php', ' && !ini_get("open_basedir")) {',
 				') { /* && !ini_get("open_basedir") Removed by tt-rss updater script in order to force the use of curl */'))
 					$GLOBALS['abort'] = true;
 			else
-				fart('classes/rssutils.php', 'not using CURL due to open_basedir restrictions',
+				fart('classes/RSSUtils.php', 'not using CURL due to open_basedir restrictions',
 					'forcing the use of curl (tt-rss updater script)');
 		} else echo '<li><b>NOT forcing</b> the use of curl.</li>';
 
 		if ($alt_hash) {
 			echo '<li>Excluding all fields apart from title and content in article hash calculation.</li>';
-			if (!fart('classes/rssutils.php', 'calculate_article_hash(array $article, PluginHost $pluginhost): string {',
+			if (!fart('classes/RSSUtils.php', 'calculate_article_hash(array $article, PluginHost $pluginhost): string {',
 					'calculate_article_hash(array $article, PluginHost $pluginhost): string { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));'))
-				if(!fart('classes/rssutils.php', 'calculate_article_hash($article, $pluginhost) {',
+				if(!fart('classes/RSSUtils.php', 'calculate_article_hash($article, $pluginhost) {',
 					'calculate_article_hash($article, $pluginhost) { /* Changed by tt-rss updater script */ $v = $article["title"] . $article["content"]; return sha1(strip_tags(is_array($v) ? implode(",", $v) : $v));'))
 						$GLOBALS['abort'] = true;
 		} else echo '<li><b>Skipping</b> article hash change: plugin names list is still used to calculate hash.</li>';
