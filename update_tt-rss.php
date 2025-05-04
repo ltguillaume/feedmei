@@ -39,7 +39,7 @@ $extracted    = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss-master'; // fold
 $source_url   = 'https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/master/tt-rss-master.zip';
 
 function remove($path, $print = true) {
-	chdir($GLOBALS['extracted']);
+	chdir($GLOBALS['extract_dir']);
 	if (empty($path) || !file_exists($path)) {
 		echo "<li>$path <i>does not exist</i></li>";
 		return;
@@ -57,14 +57,14 @@ function remove($path, $print = true) {
 }
 
 function clean($dir = false, $keep = false, $ext = false) {
-	if ($dir) chdir($GLOBALS['extracted'] .'/'. $dir);
+	if ($dir) chdir($GLOBALS['extract_dir'] .'/'. $dir);
 	$contents = glob('*'. ($ext ? $ext : ''), ($ext ? 0 : GLOB_ONLYDIR));
 	foreach(array_diff($contents, $keep) as $path)
 		remove($dir .'/'. $path);
 }
 
 function fart($file, $find, $replace) {
-	chdir($GLOBALS['extracted']);
+	chdir($GLOBALS['extract_dir']);
 	$contents = file_get_contents($file);
 	$newcontents = str_replace($find, $replace, $contents);
 	if ($newcontents == $contents) {
@@ -106,6 +106,8 @@ if (isset($_POST['submit'])) {
 	if (isset($_POST['download'])) {
 		echo '<li>Downloading latest commit from master branch...</li>';
 		$target_file = '_tt-rss-update.zip';
+		if (file_exists($target_file))
+			unlink($target_file);
 		$master = fopen($source_url, 'r');
 		if (!file_put_contents($target_file, $master))
 			die('Download failed');
@@ -113,6 +115,9 @@ if (isset($_POST['submit'])) {
 		if (empty($_FILES['zip']['name'])) die('No file uploaded');
 		echo '<li>Uploaded to temp file <b>'. $_FILES['zip']['tmp_name'] .'</b></li>';
 		$target_file = '_'. basename($_FILES['zip']['name']);
+		if (file_exists($target_file))
+			unlink($target_file);
+		$GLOBALS['extract_dir'] = pathinfo(__FILE__, PATHINFO_DIRNAME) .'/'. basename($_FILES['zip']['name'],'.zip');
 		if (move_uploaded_file($_FILES['zip']['tmp_name'], $target_file))
 			echo '<li>File <b>'. $target_file .'</b> has been uploaded</li>';
 		else die('Error while moving upload to '. $target_file);
@@ -121,13 +126,13 @@ if (isset($_POST['submit'])) {
 	$zip = new ZipArchive;
 	$res = $zip->open($target_file);
 	if ($res === true) {
-		rmTree($GLOBALS['extracted']);
+		rmTree($GLOBALS['extract_dir']);
 		$zip->extractTo($target_path);
 		$zip->close();
-		unlink($target_file);
+//		unlink($target_file);
 		echo '<li>Contents have been extracted to <b>'. $target_path .'</b></li>';
 
-		chdir($GLOBALS['extracted']);
+		chdir($GLOBALS['extract_dir']);
 
 //		echo '<li>Unlinking .less source mapping in light.css</li>';
 //		fart('themes/light.css', '/*# sourceMappingURL=light.css.map */', '');
@@ -186,17 +191,17 @@ if (isset($_POST['submit'])) {
 
 		if ($GLOBALS['abort']) die ('<i>Aborting because of error<i>');
 		echo '</ul><li>Moving files into place...</li><ul>';
-		cpTree($GLOBALS['extracted'], pathinfo(__FILE__, PATHINFO_DIRNAME));
-		rmTree($GLOBALS['extracted']);
+		cpTree($GLOBALS['extract_dir'], pathinfo(__FILE__, PATHINFO_DIRNAME));
+		rmTree($GLOBALS['extract_dir']);
 
 		echo '</ul>Done.';
 	} else die('Could not open file for extraction');
 	exit;
 }
 ?>
-<form action='<?=basename(__FILE__)?>' method='post' enctype='multipart/form-data'>
-	<p><input type='checkbox' name='download' id='download' checked> Download latest commit from master branch</p>
-	<p>Or upload zip: <input type='file' name='zip' onclick="download.checked = 0"></p>
-	<?php if (!empty($password)): ?><p>Enter password: <input type='password' name='password' autofocus></p><?php endif ?>
-	<p><input type='submit' value='Submit' name='submit' onclick="this.style.opacity=0"></p>
+<form action="<?=basename(__FILE__)?>" method="post" enctype="multipart/form-data">
+	<p><input type="checkbox" name="download" id="download" onclick="if (this.checked) file.value = ''" checked> Download latest commit from master branch</p>
+	<p>Or upload zip: <input type="file" name="zip" id="file" onclick="download.checked = 0"></p>
+	<?php if (!empty($password)): ?><p>Enter password: <input type="password" name="password" autofocus></p><?php endif ?>
+	<p><input type="submit" value="Submit" name="submit" onclick="this.style.opacity=0"></p>
 </form></body></html>
