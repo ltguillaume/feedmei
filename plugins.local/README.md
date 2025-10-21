@@ -40,4 +40,4 @@ u | Unsubscribe from feed _and_ open next feed
 Allow night modes for custom themes (use `yourtheme_night.css` as filename). Reintroduces `a N` hotkey to toggle between day and night themes.
 
 ### unread_oldest_first
-Change the sort order to _Oldest first_ when the view mode is _Adaptive_ and there are unread articles. Otherwise, set the sort order back to _Default_. Needs tt-rss commit [e981d52bda](https://git.tt-rss.org/fox/tt-rss/src/e981d52bdabbb0893ac69b29d7690d0bb63fbc14) or later.
+Change the sort order to _Oldest first_ when the view mode is _Adaptive_ and there are unread articles. Otherwise, set the sort order back to _Default_. Needs tt-rss commit [e981d52bda](https://github.com/tt-rss/tt-rss/commit/e981d52bdabbb0893ac69b29d7690d0bb63fbc14) or later.

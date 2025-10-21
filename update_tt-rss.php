@@ -7,7 +7,7 @@
 <body>
 <?php
 /*	A simple script to update Tiny Tiny RSS (upload, extract and clean up).
- *	It takes a master.zip, i.e. a compressed snapshot from the master branch.
+ *	It takes a tt-rss-main.zip, i.e. a compressed snapshot from the main branch.
  *	Tweaks:
  *	- (Disabled) Adds <g>, <main> and <article> to the allowed elements in articles
  *	- Adds a 19px margin for when scrolling to next/previous article
@@ -34,9 +34,9 @@ $line_offset  = 240;   // use FALSE to disable changes
 $keep_langs   = ['en', 'nl']; // use FALSE to disable
 $keep_locale  = ['nl_NL'];    // use FALSE to disable
 $keep_plugins = ['af_readability', 'af_redditimgur', 'af_proxy_http', 'auth_internal', 'bookmarklets', 'note', 'share', 'vf_shared']; // use FALSE to disable
-$extracted    = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss-master'; // folder from extracted zip
+$extracted    = pathinfo(__FILE__, PATHINFO_DIRNAME) . '/tt-rss-main'; // folder from extracted zip
 // Source
-$source_url   = 'https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/master/tt-rss-master.zip';
+$source_url   = 'https://github.com/tt-rss/tt-rss/archive/refs/heads/main.zip';
 
 function remove($path, $print = true) {
 	chdir($GLOBALS['extract_dir']);
@@ -104,12 +104,12 @@ if (isset($_POST['submit'])) {
 	if (!empty($password) && (!isset($_POST['password']) || hash('sha256', $_POST['password']) != $password))
 		die('Password incorrect');
 	if (isset($_POST['download'])) {
-		echo '<li>Downloading latest commit from master branch...</li>';
+		echo '<li>Downloading latest commit from main branch...</li>';
 		$target_file = '_tt-rss-update.zip';
 		if (file_exists($target_file))
 			unlink($target_file);
-		$master = fopen($source_url, 'r');
-		if (!file_put_contents($target_file, $master))
+		$main = fopen($source_url, 'r');
+		if (!file_put_contents($target_file, $main))
 			die('Download failed');
 	} else {
 		if (empty($_FILES['zip']['name'])) die('No file uploaded');
@@ -200,7 +200,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <form action="<?=basename(__FILE__)?>" method="post" enctype="multipart/form-data">
-	<p><input type="checkbox" name="download" id="download" onclick="if (this.checked) file.value = ''" checked> Download latest commit from master branch</p>
+	<p><input type="checkbox" name="download" id="download" onclick="if (this.checked) file.value = ''" checked> Download latest commit from main branch</p>
 	<p>Or upload zip: <input type="file" name="zip" id="file" onclick="download.checked = 0"></p>
 	<?php if (!empty($password)): ?><p>Enter password: <input type="password" name="password" autofocus></p><?php endif ?>
 	<p><input type="submit" value="Submit" name="submit" onclick="this.style.opacity=0"></p>

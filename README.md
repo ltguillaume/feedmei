@@ -1,7 +1,7 @@
 # FeedMei Theme + Plugins for Tiny Tiny RSS
-by ltGuillaume: [Codeberg](https://codeberg.org/ltGuillaume) | [GitHub](https://github.com/ltGuillaume) | [Buy me a beer](https://buymeacoff.ee/ltGuillaume) 🍺
+by ltGuillaume: [Codeberg](https://codeberg.org/ltguillaume) | [GitHub](https://github.com/ltguillaume) | [Buy me a beer](https://coff.ee/ltguillaume) 🍺
 
-A clean and minimal theme for [Tiny Tiny RSS](https://tt-rss.org), loosely inspired by Feedly. Built by making the minimal amount of changes to the default theme.
+A clean and minimal theme for [Tiny Tiny RSS](https://github.com/tt-rss/tt-rss), loosely inspired by Feedly. Built by making the minimal amount of changes to the default theme.
 
 This repo also includes a set of plugins ([see details](plugins.local/)). Finally, there's an [update & cleanup script](update_tt-rss.php) to easily update your Tiny Tiny RSS instance to the latest commit.
 
@@ -18,7 +18,8 @@ FeedMei+ (`feedmei+.css`) adds a few other tweaks:
 - ~~Enable smooth scrolling~~ (since this interferes with the option `Mark read on scroll`, it's been disabled)
 
 ## Installation
-_This theme can only be used in Tiny Tiny RSS v19.2 or later. FeedMei v2.1.8+ only works on commit [4ab3854aed](https://dev.tt-rss.org/tt-rss/tt-rss/commit/4ab3854aede3882779138d91594b588e1a38c70e) or later._  
+_This theme can only be used in Tiny Tiny RSS v19.2 or later. FeedMei v2.1.8+ only works on commit [4ab3854aed](https://github.com/tt-rss/tt-rss/commit/4ab3854aede3882779138d91594b588e1a38c70e) or later._  
+_Since I'm stuck using the [latest commit with support for mysql/mariadb](https://github.com/tt-rss/tt-rss/commit/60606aaa97f80e9a4456816ff060eb499faf8b73), FeedMei is unlikely to be tested on newer commits. Drop me a note if things start to break._  
 Just copy the contents of `themes.local` to the `themes.local` folder of your Tiny Tiny RSS installation. You can also copy `plugins.local` to your installation for additional functionality (see [README.md](plugins.local/)).
 
 ## Customization Tips
