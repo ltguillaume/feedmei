@@ -322,7 +322,10 @@ body.ttrss_main .hl:not(.Unread) .hl-content a.title,
 body.ttrss_main #headlines-frame div.feed-title a.title { font-weight: normal }
 
 body.ttrss_main #headlines-frame pre,
-body.ttrss_main .dijitContentPane pre { font-size: 1em }
+body.ttrss_main .dijitContentPane pre {
+	font-family: monospace;
+	font-size: .9em;
+}
 
 .header .title a,
 body.ttrss_main .hl.Unread div.title a,
@@ -351,5 +354,5 @@ div.cdm.expanded .footer {
 
 .dijitAccordionInnerContainerSelected .dijitAccordionTitle { background: #909090 !important }
 
-::selection { background: #ddd !important }
+::selection { background: #bbb !important }
 ::-webkit-scrollbar-thumb { background: #ddd !important }
